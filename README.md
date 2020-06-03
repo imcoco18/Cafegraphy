@@ -1,25 +1,24 @@
-# Cafegraphy
+# README
 
-## サイト概要
-カフェに関するベストな写真と情報を投稿し、それに対して別ユーザがコメント・いいねができる。
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-### サイトテーマ
-カフェを愛する人たちの写真投稿サイト
+Things you may want to cover:
 
-### テーマを選んだ理由
-カフェが好きで様々な用途でカフェに行くのですが、  
-カフェを検索する際に写真を見て雰囲気を重視している事と、綺麗に撮れたカフェの写真で思い出に浸るが好きなので  
-カフェ専用アルバムのような物を作ってみたいと思ったからです。
+* Ruby version
 
-### ターゲットユーザ
-* カフェが好きな人、カフェを探してる人。
-* カフェで写真を撮るのが好きな人。
+* System dependencies
 
-### 主な利用シーン
-* カフェを探す時。
-* 自分のお気に入りのカフェ写真を手軽に残したい時。
+* Configuration
 
-## 設計書
+* Database creation
 
-### 機能一覧
-https://docs.google.com/spreadsheets/d/1jgwIjpTebk0T8TfebucXb6Iemuoo5uONjKoNRj2NpPY/edit?usp=sharing
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
