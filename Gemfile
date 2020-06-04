@@ -68,5 +68,6 @@ gem "refile-mini_magick"
 gem 'kaminari','~> 1.2.1'
 gem 'ransack'
 gem 'pry-byebug'
+gem 'bootstrap', '~> 4.1.1'
 gem "jquery-rails"
 
