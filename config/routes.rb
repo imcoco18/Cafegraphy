@@ -1,31 +1,25 @@
 Rails.application.routes.draw do
-  get 'likes/create'
-  get 'likes/destroy'
-  get 'likes/index'
-  get 'likes/show'
-  get 'post_comments/create'
-  get 'post_comments/destroy'
-  get 'categories/index'
-  get 'categories/edit'
-  get 'categories/update'
-  get 'relationships/index'
-  get 'relationships/create'
-  get 'relationships/destroy'
-  get 'relationships/show'
-  get 'posts/index'
-  get 'posts/new'
-  get 'posts/create'
-  get 'posts/show'
-  get 'posts/edit'
-  get 'posts/update'
-  get 'posts/destroy'
-  get 'users/show'
-  get 'users/edit'
-  get 'users/update'
-  get 'users/out'
-  get 'users/quit'
-  get 'homes/home'
-  get 'homes/about'
   devise_for :users
+
+  resources :posts do
+    resource :likes, only: [:create,:destroy,:index,:show]
+    resources :post_comments, only: [:create,:destroy]
+  end
+
+  resources :users,only: [:show,:edit,:update] do
+    collection do
+         get 'quit'
+         patch 'out'
+    end
+    member do
+     get :following, :followers
+    end
+  end
+
+  resources :categories,only: [:index,:edit,:update]
+  resources :relationships, only: [:create,:destroy,:index,:show]
+
+  root 'homes#home'
+  get 'about' => 'homes#about'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
