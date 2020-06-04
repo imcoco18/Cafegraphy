@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {   registrations: 'users/registrations',
+                                      sessions: 'users/sessions' }
 
   resources :posts do
     resource :likes, only: [:create,:destroy,:index,:show]
     resources :post_comments, only: [:create,:destroy]
   end
 
-  resources :users,only: [:show,:edit,:update] do
+  resources :users,only: [:index,:show,:edit,:update] do
     collection do
          get 'quit'
          patch 'out'

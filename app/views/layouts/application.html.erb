@@ -10,6 +10,44 @@
   </head>
 
   <body>
+
+    <header>
+      <nav>
+        <ul class="nav">
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to "mypage", users_path %>
+            </li>
+            <li>
+              <%= link_to "search", about_path %>
+            </li>
+            <li>
+              <%= link_to "post", new_post_path %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "新規登録", new_user_registration_path %>
+            </li>
+            <li>
+              <%= link_to "login", new_user_session_path %>
+            </li>
+            <li>
+              <%= link_to "about", about_path %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
     <%= yield %>
+    <footer>
+      <ul class="footer-menu">
+        <li>
+          <%= link_to "home", root_path %> ｜
+        </li>
+        <li>
+          <%= link_to "about", about_path %> ｜
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>
