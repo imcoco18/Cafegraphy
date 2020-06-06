@@ -1,2 +1,13 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<section class="post-index">
+	<div class="row">
+		<div class="col-xs-9">
+			<div class="post-box">
+				<% @posts.each do |post| %>
+					<%= post.title %>
+					<%= post.user.name %>
+				<% end %>
+
+			</div>
+		</div>
+	</div>
+</section>
