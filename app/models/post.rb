@@ -10,6 +10,6 @@ class Post < ApplicationRecord
 
   attachment :post_image
 
-  validates :title, :post_image_id, :shop_name, presence: true #:category_id
+  validates :title, :post_image, :shop_name, presence: true #:category_id
   validates :title, :shop_name, length: {maximum: 25}
 end

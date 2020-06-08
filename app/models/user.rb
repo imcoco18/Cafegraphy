@@ -12,5 +12,5 @@ class User < ApplicationRecord
   has_many :liked_posts, through: :likes, source: :post
 
   validates :name, presence: true, length: {maximum: 15, minimum: 1}
-  validates :introduction,  length: {maximum: 50}
+  validates :introduction, length: {maximum: 50}
 end
