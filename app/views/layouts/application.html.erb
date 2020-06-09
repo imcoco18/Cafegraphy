@@ -15,7 +15,7 @@
     <header>
       <nav class="nav navbar-nav title">
           <% if user_signed_in? %>
-          <%= link_to "Cafegraphy", posts_paths, class: "no-underline", :style=>"color:#EFEDED;" %>
+          <%= link_to "Cafegraphy", posts_path, class: "no-underline", :style=>"color:#EFEDED;" %>
           <% else %>
           <%= link_to "Cafegraphy", root_path, class: "no-underline", :style=>"color:#EFEDED;" %>
           <% end %>
