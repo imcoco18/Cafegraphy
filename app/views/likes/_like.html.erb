@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+	<% if post.liked_by?(current_user) %>
+	  <%= link_to post_likes_path(post.id), method: :delete, remote: true do %>
+				<i class="fa fa-heart" aria-hidden="true" style="color: red; id="<%= post.id %>" ></i>
+				<%= post.likes.count %>
+	  <% end %>
+	<% else %>
+	  <%= link_to post_likes_path(post.id), method: :post, remote: true do %>
+				<i class="fa fa-heart-o" id="<%= post.id %>" ></i>
+				<%= post.likes.count %>
+		<% end %>
+	<% end %>
+<% end %>

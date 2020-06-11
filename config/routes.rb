@@ -3,7 +3,7 @@ Rails.application.routes.draw do
                                       sessions: 'users/sessions' }
 
   resources :posts do
-    resource :likes, only: [:create,:destroy,:index,:show]
+    resource :likes, only: [:create,:destroy]
     resources :post_comments, only: [:create,:destroy]
   end
 

@@ -1,11 +1,12 @@
 <section class="post-index">
 	<div class="row">
-		<div class="col-xs-9">
+
+		<div class="col-xs-8">
 			<div class="post-box">
 				<% @posts.each do |post| %>
 					<div class="view view-first">
                     <%= link_to post_path(post.id) do %>
-                    <%= attachment_image_tag(post, :post_image, size: "180x130") %>
+                    <%= attachment_image_tag(post, :post_image, size: "640x640") %>
                     <% end %>
                   	</div>
 					<%= post.title %>
