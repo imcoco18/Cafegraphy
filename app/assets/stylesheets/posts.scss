@@ -6,3 +6,22 @@
 	margin-right: auto;
 	margin-left : auto;
 }
+.post-show {
+	position: relative;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    border: solid 3px #99CBE8;
+
+    & .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    right: 10px;
+    padding: 0 9px;
+    line-height: 1;
+    font-size: 16px;
+    background: #FFF;
+    color: #95ccff;
+    font-weight: bold;
+    }
+}

@@ -24,7 +24,7 @@
         <ul class="nav nav-ber">
           <% if user_signed_in? %>
             <li>
-              <%= link_to users_path do %>
+              <%= link_to users_path(current_user.id) do %>
 　             <span><i class="fas fa-user"></i></span>
               <% end %>
             </li>

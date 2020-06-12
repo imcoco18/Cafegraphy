@@ -9,10 +9,13 @@
                     <%= attachment_image_tag(post, :post_image, size: "640x640") %>
                     <% end %>
                   	</div>
+                  	<div class="comment-count">
+						<span><i class="fa fa-comment"></i></span>
+						<%= post.post_comments.count %>
+					</div>
 					<%= post.title %>
 					<%= post.user.name %>
 				<% end %>
-
 			</div>
 		</div>
 	</div>
