@@ -1,2 +1,18 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<section class="user-edit">
+	<div class="row">
+		<div class="col-xs-10">
+			<h2>プロフィール編集</h2>
+			<div class="">
+				<%= form_for(@user) do |f| %>
+					<div class="form-group">
+						<%= attachment_image_tag @user, :profile_image, size: "60x60", class: "rounded-circle", fallback: "Cafegraphy.jpg"%>
+						<%= f.attachment_field :profile_image, class: "user_image" %>
+						<%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "name" %>
+						<%= f.text_area :introduction, class: "form-control", placeholder: "introduction" %>
+						<%= f.submit "編集する", class: "btn btn-success" %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</section>

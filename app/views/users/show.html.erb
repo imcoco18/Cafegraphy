@@ -4,6 +4,11 @@
 				<div class="mypage-profile text-center">
 					<p><%= attachment_image_tag(@user, :profile_image, size: "100x100" ,fallback: "Cafegraphy.jpg", class: "rounded-circle") %>
 					</p>
+					<span class="edit-link">
+						<%= link_to edit_user_path(@user) do %>
+						 <i class="fas fa-cog"></i>
+						<% end %>
+					</span>
 					<div class="mypage-profile-name">
 					  <h3><%= @user.name %></h3>
 					  <p><%= @user.introduction %></p>
