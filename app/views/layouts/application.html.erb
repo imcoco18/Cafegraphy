@@ -24,7 +24,7 @@
         <ul class="nav nav-ber">
           <% if user_signed_in? %>
             <li>
-              <%= link_to users_path(current_user.id) do %>
+              <%= link_to user_path(current_user.id) do %>
 　             <span><i class="fas fa-user"></i></span>
               <% end %>
             </li>
@@ -55,9 +55,11 @@
         </ul>
       </nav>
     </header>
-    <div class="container">
-    <%= yield %>
-    </div>
+    <main>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
     <footer>
       <span class="logo">Cafegraphy</span>
         <ul class="footer-menu">
