@@ -9,9 +9,11 @@
 						 <i class="fas fa-cog"></i>
 						<% end %>
 					</span>
+					
 					<div class="mypage-profile-name">
 					  <h3><%= @user.name %></h3>
 					  <p><%= @user.introduction %></p>
+					  <%= render "relationships/follow_button", user: @user %>
 				    </div>
 				</div>
 				<div class="mypage-index">

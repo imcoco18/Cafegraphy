@@ -5,10 +5,9 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.integer :category_id
       t.integer :comment_id
       t.integer :like_id
-      t.string :title
-      t.string :post_image_id
-      t.string :shop_name
-      t.float :rate
+      t.string :title, null: false
+      t.string :post_image_id, null: false
+      t.string :shop_name, null: false
       t.string :post_status
       t.timestamps
     end

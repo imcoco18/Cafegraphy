@@ -5,16 +5,20 @@
 			<div class="post-box">
 				<% @posts.each do |post| %>
 					<div class="view view-first">
-                    <%= link_to post_path(post.id) do %>
-                    <%= attachment_image_tag(post, :post_image, size: "640x640") %>
-                    <% end %>
+                    	<%= link_to post_path(post.id) do %>
+                    		<%= attachment_image_tag(post, :post_image, size: "640x640") %>
+                    	<% end %>
                   	</div>
                   	<div class="comment-count">
 						<span><i class="fa fa-comment"></i></span>
 						<%= post.post_comments.count %>
 					</div>
-					<%= post.title %>
-					<%= post.user.name %>
+					<%= link_to post_path(post.id) do %>
+						<%= post.title %>
+					<% end %>
+					<%= link_to user_path(post.id) do %>
+					  <%= post.user.name %>
+					<% end %>
 				<% end %>
 			</div>
 		</div>

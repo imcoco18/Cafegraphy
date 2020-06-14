@@ -70,6 +70,7 @@ gem 'ransack'
 gem 'pry-byebug'
 gem 'bootstrap', '~> 4.1.1'
 gem "jquery-rails"
+gem 'ratyrate'
 
 
 gem 'dotenv-rails'
