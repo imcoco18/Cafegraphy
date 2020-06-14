@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 2020_06_13_133947) do
     t.integer "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_post_tags_on_post_id"
+    t.index ["tag_id"], name: "index_post_tags_on_tag_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -65,9 +67,9 @@ ActiveRecord::Schema.define(version: 2020_06_13_133947) do
     t.integer "category_id"
     t.integer "comment_id"
     t.integer "like_id"
-    t.string "title"
-    t.string "post_image_id"
-    t.string "shop_name"
+    t.string "title", null: false
+    t.string "post_image_id", null: false
+    t.string "shop_name", null: false
     t.string "post_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -95,10 +97,9 @@ ActiveRecord::Schema.define(version: 2020_06_13_133947) do
   end
 
   create_table "tags", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|

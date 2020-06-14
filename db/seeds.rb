@@ -14,3 +14,13 @@
 # 	    shop_name: "cafe#{n + 1}"
 # 	)
 # end
+
+Tag.create!([
+  { name: 'WiFi' },
+  { name: '電源' },
+  { name: '喫煙' },
+  { name: '禁煙' },
+  { name: '静か' },
+  { name: '子供OK' },
+  { name: 'お酒' }
+])
