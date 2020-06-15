@@ -1,10 +1,21 @@
 // Place all the styles related to the Homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-img {
-	margin-bottom: 10px;
-}
-h2 {
-	margin: 32px 0!important;
-	color: #5E4983!important;
+.home {
+	height: 500px;
+	background-image: url("whiterose2.jpg");
+	background-size: cover;
+	background-position: center;
+
+	& .home-content {
+		padding-top: 130px;
+	}
+	& .home-title {
+		padding: 5px 10px 1px 10px;
+		background-color: rgba(255,255,255,0.8);
+		border-radius: 18px;
+	}
+	& .h2 {
+		color: #5E4983!important;
+	}
 }
