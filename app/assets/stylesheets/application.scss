@@ -51,12 +51,17 @@ header {
   	 font-family: 'Apple Chancery','Chalkduster','Times New Roman','Noteworthy','Mv Boli',sans-serif;
   	}
 
-  	& .nav-right {
-  	text-align: right;
-  	}
-
     & li {
-    margin: 5px;
+    margin: 16px;
+    }
+
+    & li:first-child {
+    margin-left: 50px;
+    }
+
+    & li:nth-child(2) {
+    margin-left: 25px;
+    margin-right: 25px;
     }
 
   	& .no-underline {

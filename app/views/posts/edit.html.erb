@@ -1,2 +1,48 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<section class="post-edit">
+	<div class="row">
+		<div class="col-xs-12 ml-auto mr-auto">
+			<%= form_for(@post) do |f| %>
+			<% if @post.errors.any? %>
+			    <div id="error_explanation">
+			      <h2><%= @post.errors.count %>件のエラーが発生しました。</h2>
+			      <ul>
+			      <% @post.errors.full_messages.each do |message| %>
+			        <li><%= message %></li>
+			      <% end %>
+			      </ul>
+			    </div>
+			<% end %>
+				<div class="row">
+					<div class="col-xs-12 form-group">
+						<%= f.attachment_field :post_image, class: "image" %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6 form-group">
+						<%= f.text_field :title, class: "form-control", placeholder:"タイトル" %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6 form-group">
+						<%= f.text_field :shop_name, class: "form-control", placeholder:"店名" %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+					    <div class="form-group">
+					        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+					            <div class="form-check form-check-inline">
+					                <%= tag.label class: "form-check-label tag-label" do %>
+				                    <%= tag.check_box class: "form-check-input" %>
+				                    <%= tag.text %>
+                					<% end %>
+            					</div>
+        					<% end %>
+    					</div>
+					</div>
+				</div>
+				<%= f.submit "投稿する", class: "btn btn-info" %>
+			<% end %>
+		</div>
+	</div>
+</section>

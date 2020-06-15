@@ -17,17 +17,18 @@
 							<span><i class="fa fa-comment"></i></span>
 							<%= @post.post_comments.count %>
 						</div>
-						<div class="post-delete">
-        		<% if @post.user == current_user %>
-              <%= link_to post_path(@post), method: :delete do %>
-                <span><i class="fas fa-trash-alt"></i></span>
-              <% end %>
-          	<% end %>
-						</div>
+	        		<% if @post.user == current_user %>
+	        		  <%= link_to edit_post_path(@post), class: "no-underline" do %>
+	        		  	<span class="post-edit"><i class="fas fa-edit"></i></span>
+	        		  <% end %>
+		              <%= link_to post_path(@post), method: :delete do %>
+		                <span class="post-delete"><i class="fas fa-trash-alt"></i></span>
+		              <% end %>
+		          <% end %>
 					</div>
 					<div class="post-body">
 	        	<h3 class="post-title"><%= @post.title %></h3>
-        		<h5><%= @post.shop_name %></h5>
+        		<h5><span><i class="fas fa-store"></i> <%= @post.shop_name %></h5></span>
         		<div class="post-tags">
 	        		<% @post.tags.each do |tag| %>
 	        		  <span class="badge badge-info"><%= tag.name %></span>
@@ -36,7 +37,7 @@
         	</div>
 					<div class="post-user float-right">
 						<span class="post-date"><%= @post.created_at.strftime('%Y/%m/%d') %></span>
-						<%= link_to user_path(@post.id) do %>
+						<%= link_to user_path(@post.id), class: "no-underline" do %>
 							<%= attachment_image_tag @post.user, :profile_image, size: "40x40" ,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
 							<%= @post.user.name %>
 						<% end %>
@@ -53,7 +54,7 @@
 					  </div>
 					  	<%= c.created_at.strftime('%Y/%m/%d') %>
 					  <div class="avatar">
-					  	<%= link_to user_path(c.user.id) do %>
+					  	<%= link_to user_path(c.user.id), class: "no-underline" do %>
 		          	<%= attachment_image_tag c.user, :profile_image, size: "30x30" ,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
 						  	<%= c.user.name %> 
 					  	<% end %>

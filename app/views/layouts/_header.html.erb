@@ -1,29 +1,31 @@
 <nav class="nav navbar-nav title">
-          <% if user_signed_in? %>
-          <%= link_to "Cafegraphy", posts_path, class: "no-underline", :style=>"color:#EFEDED;" %>
-          <% else %>
-          <%= link_to "Cafegraphy", root_path, class: "no-underline", :style=>"color:#EFEDED;" %>
-          <% end %>
-      </nav>
-      <nav class="nav-right">
-        <ul class="nav nav-ber">
-          <% if user_signed_in? %>
-            <li>
-              <%= link_to user_path(current_user.id) do %>
-　             <span><i class="fas fa-user"></i></span>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to users_path do %>
-              <span><i class="fas fa-search"></i></span>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "投稿", new_post_path %>
-            </li>
-            <li>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-            </li>
-          <% end %>
-        </ul>
-      </nav>
+  <% if user_signed_in? %>
+    <%= link_to "Cafegraphy", posts_path, class: "no-underline", :style=>"color:#EFEDED;" %>
+  <% else %>
+    <%= link_to "Cafegraphy", root_path, class: "no-underline", :style=>"color:#EFEDED;" %>
+  <% end %>
+</nav>
+<nav class="nav-right">
+  <ul class="nav nav-ber">
+    <% if user_signed_in? %>
+      <li>
+        <%= link_to users_path, class: "no-underline" do %>
+          <span><i class="fas fa-search"></i></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to user_path(current_user.id), class: "no-underline" do %>
+          <span><i class="fas fa-user"></i></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to new_post_path, class: "no-underline" do %>
+          <span><i class="fas fa-camera-retro"></i></span>投稿
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "(仮)logout", destroy_user_session_path, method: :delete %>
+      </li>
+    <% end %>
+  </ul>
+</nav>

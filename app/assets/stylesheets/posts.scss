@@ -1,10 +1,37 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.no-underline {
+    text-decoration: none !important;
+}
 .post-index {
-
 	margin-right: auto;
 	margin-left : auto;
+
+    & .post-index-box{
+    position: relative;
+    margin: 30px;
+    padding: 32px 24px 48px 24px;
+    border: solid 3px #99CBE8;
+    }
+
+    & .view {
+    margin-bottom: 10px;
+    }
+
+    & .no-underline {
+    text-decoration: none;
+    color: #451761;
+    }
+
+    & .no-underline:hover {
+    color: #AA8DC9;
+    }
+
+    & .post-title {
+    font-size: 18px;
+    margin-top: 10px;
+    }
 }
 .post-show {
 	position: relative;
@@ -43,10 +70,13 @@
     margin: 48px 28px 24px 10px;
     }
     & .post-icons {
-    margin-left: 400px;
+    margin-left: 370px;
     }
     & .post-tags {
     margin-left:8px;
+    }
+    & .fa-edit {
+    margin-left: 10px;
     }
     & .fa-trash-alt {
     margin-left: 10px;

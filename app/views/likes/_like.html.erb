@@ -1,11 +1,11 @@
 <% if user_signed_in? %>
 	<% if post.liked_by?(current_user) %>
-	  <%= link_to post_likes_path(post.id), method: :delete, remote: true do %>
+	  <%= link_to post_likes_path(post.id), method: :delete, remote: true, class: "no-underline" do %>
 				<i class="fa fa-heart" aria-hidden="true" style="color: red;" id="<%= post.id %>" ></i>
 				<%= post.likes.count %>
 	  <% end %>
 	<% else %>
-	  <%= link_to post_likes_path(post.id), method: :post, remote: true do %>
+	  <%= link_to post_likes_path(post.id), method: :post, remote: true, class: "no-underline" do %>
 				<i class="fa fa-heart-o"></i>
 				<%= post.likes.count %>
 		<% end %>
