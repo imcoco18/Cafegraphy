@@ -28,6 +28,10 @@ class User < ApplicationRecord
   has_many :followers, through: :reverse_of_relationships, source: :user
   #foregin_key = 入口
   #source = 出口
+    #フォローできるユーザーを取り出すに記述
+  has_many :follow_relationships, foreign_key: "user_id", class_name: "Relationship", dependent: :destroy
+
+  has_many :follows, through: :follow_relationships
 
   def follow(other_user)
     #自分をフォローしていないか
@@ -45,6 +49,7 @@ class User < ApplicationRecord
      #other_user が含まれていないかを確認
     self.followings.include?(other_user)
   end
+
 
 
 

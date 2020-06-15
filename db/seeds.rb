@@ -7,13 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# 10.times do |n|
-# 	Post.create!(
-# 	    title: "title#{n + 1}",
-# 	    post_image: open("./app/assets/images/sample1.jpg"),
-# 	    shop_name: "cafe#{n + 1}"
-# 	)
-# end
+ # 10.times do |n|
+ # 	Post.create!(
+	#     title: "title#{n + 1}",
+ # 	    post_image: open("./app/assets/images/sample1.jpg"),
+ # 	    shop_name: "cafe#{n + 1}"
+ # 	)
+ # end
 
 Tag.create!([
   { name: 'WiFi' },
@@ -24,3 +24,4 @@ Tag.create!([
   { name: '子供OK' },
   { name: 'お酒' }
 ])
+

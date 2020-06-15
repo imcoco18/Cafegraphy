@@ -9,6 +9,39 @@
   border: solid;
   border-width: 0 3px;
   border-color: #8177A5;
+
+  & .btn-follow-out {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  color: rgba(0, 69, 212, 0.47);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+  background-image: linear-gradient(#6795fd 0%, #67ceff 100%);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #5e7fca;
+  }
+
+  & .btn-follow-out:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+  }
+
+  & .btn-follow {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  color: #EBE8E8;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+  background-image: linear-gradient(#E87EC1 0%, #9198e5 100%);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #5e7fca;
+  }
 }
 
 .mypage-index {
@@ -20,3 +53,85 @@
 	margin: 24px;
 	}
 }
+.follow-box {
+  & .btn-follow-out {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+  }
+  & .btn-follow-out:hover {
+  background: #67c5ff;
+  color: white;
+  }
+  & .btn-follow {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #EA8BC5;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+  }
+  & .btn-follow:hover {
+  background: #EA8BC5;
+  color: white;
+  }
+  & .follow-name {
+  padding-left: 12px;
+  padding-right: 30px;
+  }
+}
+.follower-box {
+  & .btn-follow-out {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+  }
+  & .btn-follow-out:hover {
+  background: #67c5ff;
+  color: white;
+  }
+  & .btn-follow {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #EA8BC5;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+  }
+  & .btn-follow:hover {
+  background: #EA8BC5;
+  color: white;
+  }
+  & .follower-name {
+  padding-left: 12px;
+  padding-right: 30px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -35,4 +35,33 @@
 .tag-label:hover {
     background-color: #8EDDF9;
 }
+.post-item {
+    margin: 10px 5px 60px 5px;
+
+
+    & .post-image {
+    margin: 48px 28px 24px 10px;
+    }
+    & .post-icons {
+    margin-left: 400px;
+    }
+    & .post-tags {
+    margin-left:8px;
+    }
+    & .fa-trash-alt {
+    margin-left: 10px;
+    }
+    & .post-date {
+    font-size:12px;
+    margin-right: 5px;
+    }
+}
+.comment-form {
+    margin-top: 10px;
+    padding-bottom: 64px;
+
+    & .btn {
+    margin-top: 10px;
+    }
+}
 
