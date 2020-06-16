@@ -16,6 +16,12 @@ class Post < ApplicationRecord
   #評価対象となる項目を指定
   ratyrate_rateable :shop_name
 
+  #ランキング表示
+  def self.create_all_ranks
+    #記事の番号(note_id)が同じものにグループを分け、番号の多い順に並び替え
+    Post.find(Like.group(:post_id).order("count(post_id) desc").limit(4).pluck(:post_id))
+  end
+
   validates :title, :post_image, :shop_name, presence: true #:category_id
   validates :title, :shop_name, length: {maximum: 25}
 end

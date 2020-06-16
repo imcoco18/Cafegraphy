@@ -50,7 +50,9 @@ class User < ApplicationRecord
     self.followings.include?(other_user)
   end
 
-
+def self.create_all_ranks
+  User.find(Relationship.group(:follow_id).order("count(follow_id) desc").limit(5).pluck(:follow_id))
+end
 
 
   validates :name, presence: true, length: {maximum: 15, minimum: 1}

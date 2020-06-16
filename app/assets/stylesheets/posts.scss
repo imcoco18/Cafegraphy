@@ -4,6 +4,21 @@
 .no-underline {
     text-decoration: none !important;
 }
+.post-index-top {
+    margin-bottom: 30px;
+
+    & .post-rank {
+    margin-bottom: 10px;
+    }
+    & .post-rank-box {
+    float: left;
+    margin:10px 20px;
+    }
+    & .post-rank-user {
+    margin-bottom: 5px;
+    }
+}
+
 .post-index {
 	margin-right: auto;
 	margin-left : auto;

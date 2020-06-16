@@ -10,9 +10,11 @@
 				  			<%= attachment_image_tag user, :profile_image, size: "40x40" ,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
 				  		<% end %>
 				  	<td>
-				  		<%= link_to user_path(user) do %>
-								<div class="follower-name"><%= user.name %></div>
-					  	<% end %>
+				  		<div class="follower-name">
+					  		<%= link_to user_path(user) do %>
+								<%= user.name %>
+						  	<% end %>
+					  	</div>
 					  </td>
 					  <td><%= render "relationships/follow_button", user: user %></td>
 					</tr>

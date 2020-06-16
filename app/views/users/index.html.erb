@@ -1,1 +1,27 @@
-<h1>Users#index</h1>
+<div class="row">
+	<div class="col-xs-12 ml-auto mr-auto">
+		<section class="user-rank">
+			<h2>人気のカフェグラファー</h2>
+			<% @all_ranks.each do |user_rank| %>
+				<div class="user-rank-box">
+					<table>
+						<tbody>
+							<tr>
+								<td></td>
+								<td>
+									<%= link_to user_path(user_rank.id) do %>
+										<%= attachment_image_tag user_rank, :profile_image, size: "40x40" ,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
+										<%= user_rank.name %>
+									<% end %>
+								</td>
+								<td>フォロワー:<%= user_rank.followers.count %></td>
+								<td><%= render "relationships/follow_button", user: user_rank %></td>
+							</tr>
+						</tbody>
+					</table>
+					<hr>
+				</div>
+			<% end %>
+		</section>
+	</div>
+</div>

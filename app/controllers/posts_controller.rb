@@ -3,7 +3,8 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page]).per(6).order(id: "DESC")
+    @all_ranks = Post.create_all_ranks
   end
 
   def new
