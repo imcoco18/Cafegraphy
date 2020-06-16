@@ -51,7 +51,7 @@ class User < ApplicationRecord
   end
 
 def self.create_all_ranks
-  User.find(Relationship.group(:follow_id).order("count(follow_id) desc").limit(5).pluck(:follow_id))
+  User.find(Relationship.group(:follow_id).order(Arel.sql("count(follow_id) desc")).limit(5).pluck(:follow_id))
 end
 
 
