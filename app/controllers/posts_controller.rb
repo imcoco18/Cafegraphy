@@ -42,12 +42,24 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to post_path
+    redirect_to posts_path
+  end
+
+  def search
+    #キーワード
+    @q = Post.ransack(params[:q])
+    @results = @q.result(distinct: true).order("created_at DESC").page(params[:page]).per(10)
+    #タグ
+    #@tag_search = Post.tagged_with(params[:search])
   end
 
   private
 
   def post_params
     params.require(:post).permit(:post_image, :title, :shop_name, :comment, tag_ids: [])
+  end
+
+  def search_params
+    params.require(:q).permit(:title_cont, :shop_name)
   end
 end

@@ -12,8 +12,7 @@ class CreateRelationships < ActiveRecord::Migration[5.2]
 
       #user_id と follow_id のペアで重複するものが保存されないようにするデータベースの設定
       t.index [:user_id, :follow_id], unique: true
-      t.index :user_id
-      t.index :follow_id
+
     end
   end
 end

@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-  post '/rate' => 'rater#create', :as => 'rate'
+  #post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users, controllers: {   registrations: 'users/registrations',
                                       sessions: 'users/sessions' }
 
   resources :posts do
     resource :likes, only: [:create,:destroy]
     resources :post_comments, only: [:create,:destroy]
+      collection do
+        get 'search' => 'posts#search'
+      end
   end
 
   resources :users,only: [:index,:show,:edit,:update] do

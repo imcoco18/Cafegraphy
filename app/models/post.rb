@@ -14,7 +14,7 @@ class Post < ApplicationRecord
   attachment :post_image
 
   #評価対象となる項目を指定
-  ratyrate_rateable :shop_name
+  #ratyrate_rateable :shop_name
 
   #ランキング表示
   def self.create_all_ranks

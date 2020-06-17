@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_06_13_133947) do
     t.integer "rater_id"
     t.string "rateable_type"
     t.integer "rateable_id"
-    t.float "avg", null: false
+    t.float "avg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["rateable_type", "rateable_id"], name: "index_average_caches_on_rateable_type_and_rateable_id"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_06_13_133947) do
   create_table "overall_averages", force: :cascade do |t|
     t.string "rateable_type"
     t.integer "rateable_id"
-    t.float "overall_avg", null: false
+    t.float "overall_avg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["rateable_type", "rateable_id"], name: "index_overall_averages_on_rateable_type_and_rateable_id"
@@ -78,8 +78,8 @@ ActiveRecord::Schema.define(version: 2020_06_13_133947) do
   create_table "rating_caches", force: :cascade do |t|
     t.string "cacheable_type"
     t.integer "cacheable_id"
-    t.float "avg", null: false
-    t.integer "qty", null: false
+    t.float "avg"
+    t.integer "qty"
     t.string "dimension"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

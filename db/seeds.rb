@@ -7,13 +7,23 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
- # 10.times do |n|
- # 	Post.create!(
-	#     title: "title#{n + 1}",
- # 	    post_image: open("./app/assets/images/sample1.jpg"),
- # 	    shop_name: "cafe#{n + 1}"
- # 	)
- # end
+10.times do |n|
+	User.create!(
+	  name: "カモノハシ#{n + 1}",
+	  email: "test#{n + 1}@test.com",
+	  password: "111111",
+	  profile_image: File.open("./app/assets/images/Cafegraphy.jpg"),
+	  introduction: "ご飯食べたいカフェいきたい"
+	)
+end
+
+User.all.each do |user|
+  user.posts.create!(
+  	post_image: File.open("./app/assets/images/cafe2.jpg"),
+    title: 'good tea',
+    shop_name: 'coffeeshop'
+  )
+end
 
 Tag.create!([
   { name: 'WiFi' },
