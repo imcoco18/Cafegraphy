@@ -32,10 +32,10 @@ class UsersController < ApplicationController
     render 'show_follower'
   end
 
-  def out
-  end
-
-  def quit
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to root_path
   end
 
   private

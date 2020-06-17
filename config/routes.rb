@@ -11,11 +11,7 @@ Rails.application.routes.draw do
       end
   end
 
-  resources :users,only: [:index,:show,:edit,:update] do
-    collection do
-         get 'quit'
-         patch 'out'
-    end
+  resources :users,only: [:index,:show,:edit,:update,:destroy] do
     member do
      get :following, :followers
     end
