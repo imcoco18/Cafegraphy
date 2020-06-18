@@ -73,6 +73,7 @@ gem "jquery-rails"
 gem 'ratyrate'
 
 
+#MySQLを利用するために必要なgem,環境変数を管理するgem
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'

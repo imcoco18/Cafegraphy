@@ -1,6 +1,6 @@
 <section class="post-new">
 	<div class="row">
-		<div class="col-xs-9  ml-auto mr-auto">
+		<div class="col-xs-9 ml-auto mr-auto">
 			<h2 class="head-line">投稿</h2>
 			<%= form_for(@post, url: posts_path) do |f|%>
 				<% if @post.errors.any? %>
@@ -14,8 +14,8 @@
 				    </div>
 				<% end %>
 				<div class="row">
-					<div class="img_field">
-          </div>
+					
+
 					<div class="col-xs-12 form-group">
 						<%= f.attachment_field :post_image, class: "image" %>
 					</div>
