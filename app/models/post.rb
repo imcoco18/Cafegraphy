@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
 
   belongs_to :user
+  belongs_to :category, dependent: :destroy, optional: true
   has_many :likes, dependent: :destroy
   #投稿がどのユーザーにいいねされているのかを簡単に取得できるようにするため
   def liked_by?(user)#いいね しているかどうか
@@ -22,6 +23,6 @@ class Post < ApplicationRecord
     Post.find(Like.group(:post_id).order("count(post_id) desc").limit(4).pluck(:post_id))
   end
 
-  validates :title, :post_image, :shop_name, presence: true #:category_id
+  validates :title, :post_image, :shop_name, :category_id, presence: true
   validates :title, :shop_name, length: {maximum: 25}
 end

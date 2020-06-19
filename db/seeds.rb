@@ -22,7 +22,8 @@ User.all.each do |user|
     user.posts.create!(
     	post_image: File.open("./app/assets/images/cafe2.jpg"),
       title: "good tea#{n + 1}",
-      shop_name: "coffeeshop#{n + 1}"
+      shop_name: "coffeeshop#{n + 1}",
+      category_id: 1
     )
   end
 end
@@ -40,6 +41,16 @@ Tag.create!([
   { name: 'テラス席あり' },
   { name: 'PCあり' },
   { name: 'クレジットカードOK' },
-  { name: '電子マネーOK' },
+  { name: '電子マネーOK' }
 ])
+
+Category.create!([
+  { name: '大阪' },
+  { name: '神戸' },
+  { name: '京都' },
+  { name: '名古屋' }
+])
+
+
+
 

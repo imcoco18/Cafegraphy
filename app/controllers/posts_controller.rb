@@ -57,10 +57,10 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:post_image, :title, :shop_name, :comment, tag_ids: [])
+    params.require(:post).permit(:post_image, :title, :shop_name, :category_id, :comment, tag_ids: [])
   end
 
   def search_params
-    params.require(:q).permit(:title_cont, :shop_name)
+    params.require(:q).permit(:title_cont, :shop_name_cont)
   end
 end
