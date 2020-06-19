@@ -32,6 +32,11 @@
                     		<%= attachment_image_tag(post, :post_image, size: "480x480") %>
                     	<% end %>
                   	</div>
+                  	<!-- いいね機能 -->
+        			<div class="float-left" id="likes_buttons_<%= post.id %>">
+						<%= render partial: 'likes/like', locals: {post: post} %>
+					</div>
+
                   	<div class="comment-count">
 						<span><i class="fa fa-comment"></i></span>
 						<%= post.post_comments.count %>

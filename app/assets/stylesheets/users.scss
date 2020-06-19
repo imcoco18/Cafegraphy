@@ -6,6 +6,15 @@
   margin: 1em 0;
   padding: 1em;
 
+  & .follow-button {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  }
+
+  & .follow-stats {
+  margin-top: 20px;
+  margin-bottom: 10px!important;
+  }
 
   & .btn-follow-out {
   display: inline-block;
@@ -114,6 +123,75 @@
   padding-right: 30px;
   }
 }
+
+.back-btn {
+  background:#8EDDF9;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:70px;
+  font-size:18px;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+.back-btn:hover {
+  background:#fff;
+  color:#8EDDF9;
+}
+.back-btn:before,.back-btn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #8EDDF9;
+  transition:400ms ease all;
+}
+.back-btn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.back-btn:hover:before,.back-btn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+.user-edit-box {
+  margin-top: 30px;
+
+  & .edit-name {
+  margin: 20px 0;
+  }
+  & .edit-introduction {
+  margin-bottom: 30px;
+  }
+  & .edit-btn {
+  width: 100%;
+  background: #AA8DC9;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 2px 8px;
+  color: #fff;
+  border: none;
+  border-bottom: 5px solid #CB64B2;  
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  }
+  & .edit-btn:hover {
+  background: #ED70B6;
+  -webkit-transform: translate(0, 4px);
+  border-bottom: 2px solid #CB64B2;  
+  box-shadow: inset 0px 0px 10px 10px #CF5DB2;
+  cursor: pointer;
+  }
+}
+
 
 
 

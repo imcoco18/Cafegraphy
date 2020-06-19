@@ -2,29 +2,42 @@
 	<div class="row">
 		<div class="col-xs-10 ml-auto mr-auto">
 			<h2>プロフィール編集</h2>
-			<div class="">
+			<div class="user-edit-box">
 				<%= form_for(@user) do |f| %>
 					<div class="form-group">
-						<%= attachment_image_tag @user, :profile_image, size: "60x60", class: "rounded-circle", fallback: "Cafegraphy.jpg"%>
-						<%= f.attachment_field :profile_image, class: "user_image" %>
-						<%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "name" %>
-						<%= f.text_area :introduction, class: "form-control", placeholder: "introduction" %>
-						<%= f.submit "編集する", class: "btn btn-success" %>
-
+						<div class="edit-profile-img">
+							<%= attachment_image_tag @user, :profile_image, size: "60x60", class: "rounded-circle", fallback: "Cafegraphy.jpg"%>
+							<%= f.attachment_field :profile_image, class: "user_image" %>
+						</div>
+						<div class="edit-name">
+							<%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "name" %>
+					    </div>
+					    <div class="edit-introduction">
+							<%= f.text_area :introduction, class: "form-control", placeholder: "introduction" %>
+						</div>
+						<div class="actions">
+							<%= f.submit "編集する", class: "edit-btn" %>
+						</div>
 					</div>
 				<% end %>
 			</div>
 			<hr>
-			<div class="user-destroy">
-				<%= link_to user_path(current_user), method: :delete, data: {confirm: "本当にアカウントを削除しますか？"} do %>
-					<span>アカウントを削除</span>
+			<div class="user-password">
+				<%= link_to edit_user_registration_path(@user), class: "no-underline" do %>
+				<p><i class="fa fa-key "></i>メールアドレス/パスワード変更する</p>
 				<% end %>
 			</div>
 			<div class="user-loguout">
-				<%= link_to destroy_user_session_path, method: :delete do %>
-				<span>ログアウトする</span>
+				<%= link_to destroy_user_session_path, method: :delete, data: {confirm: "本当にログアウトしますか？"}, class: "no-underline" do %>
+				<p><i class="fa fa-sign-out "></i> ログアウトする</p>
 				<% end %>
 			</div>
+			<div class="user-destroy">
+				<%= link_to user_path(current_user), method: :delete, data: {confirm: "本当にアカウントを削除しますか？"}, class: "no-underline" do %>
+					<p><i class="fa fa-frown-o "></i> アカウントを削除</p>
+				<% end %>
+			</div>
+			<%= link_to "前に戻る", user_path(current_user.id), class: "no-underline back-btn" %>
 		</div>
 	</div>
 </section>

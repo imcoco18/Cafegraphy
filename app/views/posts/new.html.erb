@@ -1,6 +1,6 @@
 <section class="post-new">
 	<div class="row">
-		<div class="col-xs-9  ml-auto mr-auto">
+		<div class="col-xs-12 ml-auto mr-auto">
 			<h2 class="head-line">投稿</h2>
 			<%= form_for(@post, url: posts_path) do |f|%>
 				<% if @post.errors.any? %>
@@ -13,39 +13,36 @@
 				      </ul>
 				    </div>
 				<% end %>
-				<div class="row">
-					<div class="img_field">
-          </div>
-					<div class="col-xs-12 form-group">
+				<div class="post-new-box col-xs-12">
+					<div class="new-img form-group">
 						<%= f.attachment_field :post_image, class: "image" %>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-6">
+					<div class="new-title form-group">
 						<%= f.text_field :title, class: "form-control", placeholder:"タイトル" %>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-6">
+
+					<div class="new-shop_name form-group">
 						<%= f.text_field :shop_name, class: "form-control", placeholder:"店名" %>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-6">
-					    <div class="form-group">
-					        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
-					            <div class="form-check form-check-inline">
-					                <%= tag.label class: "form-check-label tag-label" do %>
-				                    <%= tag.check_box class: "form-check-input" %>
-				                    <%= tag.text %>
-                					<% end %>
-            					</div>
-        					<% end %>
-    					</div>
+
+					<div class="new-tags form-group">
+					    <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+		            <div class="form-check form-check-inline">
+		                <%= tag.label class: "form-check-label tag-label" do %>
+	                    <%= tag.check_box class: "form-check-input" %>
+	                    <%= tag.text %>
+          					<% end %>
+      					</div>
+        			<% end %>
+    			</div>
+
+    			<div class="actions">
+						<%= f.submit "投稿する", class: "new-btn" %>
 					</div>
+
 				</div>
-				<%= f.submit "投稿する", class: "btn btn-info" %>
 			<% end %>
+			<%= link_to "前に戻る", posts_path, class: "no-underline back-btn" %>
 		</div>
 	</div>
 </section>

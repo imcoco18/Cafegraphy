@@ -18,20 +18,28 @@
 end
 
 User.all.each do |user|
-  user.posts.create!(
-  	post_image: File.open("./app/assets/images/cafe2.jpg"),
-    title: 'good tea',
-    shop_name: 'coffeeshop'
-  )
+  10.times do |n|
+    user.posts.create!(
+    	post_image: File.open("./app/assets/images/cafe2.jpg"),
+      title: "good tea#{n + 1}",
+      shop_name: "coffeeshop#{n + 1}"
+    )
+  end
 end
 
 Tag.create!([
-  { name: 'WiFi' },
-  { name: '電源' },
-  { name: '喫煙' },
-  { name: '禁煙' },
-  { name: '静か' },
-  { name: '子供OK' },
-  { name: 'お酒' }
+  { name: 'WiFiあり' },
+  { name: '電源あり' },
+  { name: '喫煙スペースあり' },
+  { name: '全面禁煙' },
+  { name: '喫煙席あり' },
+  { name: '一人でもOK' },
+  { name: '子供連れOK' },
+  { name: 'アルコールあり' },
+  { name: '駅近' },
+  { name: 'テラス席あり' },
+  { name: 'PCあり' },
+  { name: 'クレジットカードOK' },
+  { name: '電子マネーOK' },
 ])
 

@@ -11,7 +11,7 @@
         	<div class="post-icons clearfix">
 				<!-- いいね機能 -->
 	        	<div class="float-left" id="like-<%= @post.id %>">
-							<%= render partial: 'likes/like', locals: { post: @post } %>
+							<%= render partial: 'likes/like', locals: {post: @post} %>
 						</div>
 				<!-- コメント数 -->
 						<div class="comment-count float-left">
@@ -26,7 +26,7 @@
 		              <%= link_to post_path(@post), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"} do %>
 		                <span class="post-delete"><i class="fas fa-trash-alt"></i></span>
 		              <% end %>
-		          <% end %>
+		          	<% end %>
 					</div>
 
 					<div class="post-body">
