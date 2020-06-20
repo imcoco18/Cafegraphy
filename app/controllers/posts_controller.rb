@@ -61,6 +61,6 @@ class PostsController < ApplicationController
   end
 
   def search_params
-    params.require(:q).permit(:title_cont, :shop_name_cont)
+    params.require(:q).permit!
   end
 end

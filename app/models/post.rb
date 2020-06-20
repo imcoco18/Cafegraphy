@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
 
   belongs_to :user
-  belongs_to :category, dependent: :destroy, optional: true
+  belongs_to :category, optional: true
   has_many :likes, dependent: :destroy
   #投稿がどのユーザーにいいねされているのかを簡単に取得できるようにするため
   def liked_by?(user)#いいね しているかどうか

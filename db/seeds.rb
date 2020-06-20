@@ -44,12 +44,43 @@ Tag.create!([
   { name: '電子マネーOK' }
 ])
 
-Category.create!([
-  { name: '大阪' },
-  { name: '神戸' },
-  { name: '京都' },
-  { name: '名古屋' }
-])
+osaka = Category.create(:name=>"大阪")
+
+umeda = osaka.children.create(:name=>"梅田")
+shinsaibashi = osaka.children.create(:name=>"心斎橋")
+namba = osaka.children.create(:name=>"難波")
+
+umeda.children.create([{:name=>"茶屋町"}, {:name=>"JR大阪"},{:name=>"東梅田"},{:name=>"中崎町"},{:name=>"その他"}])
+shinsaibashi.children.create([{:name=>"本町"}, {:name=>"堀江"}, {:name=>"アメ村"},{:name=>"その他"}])
+namba.children.create([{:name=>"道頓堀"}, {:name=>"なんば"}, {:name=>"南堀江"},{:name=>"その他"}])
+
+
+hyogo = Category.create(:name=>"兵庫")
+
+nishinomiya = hyogo.children.create(:name=>"西宮")
+ashiya = hyogo.children.create(:name=>"芦屋")
+kobe = hyogo.children.create(:name=>"神戸")
+
+nishinomiya.children.create([{:name=>"西宮北口"}, {:name=>"甲子園"},{:name=>"夙川"},{:name=>"その他"}])
+ashiya.children.create([{:name=>"芦屋川"}, {:name=>"阪神芦屋"}, {:name=>"JR芦屋"},{:name=>"その他"}])
+kobe.children.create([{:name=>"三宮"}, {:name=>"ハーバーランド"}, {:name=>"北野"},{:name=>"灘"},{:name=>"岡本"},{:name=>"その他"}])
+
+
+kyoto = Category.create(:name=>"京都")
+
+jrkyoto = kyoto.children.create(:name=>"JR京都")
+uji = kyoto.children.create(:name=>"宇治")
+gion = kyoto.children.create(:name=>"祇園四条")
+
+jrkyoto.children.create([{:name=>"五条"}, {:name=>"九条"},{:name=>"西大路"},{:name=>"その他"}])
+uji.children.create([{:name=>"長岡京"}, {:name=>"伏見"}, {:name=>"京田辺"},{:name=>"その他"}])
+gion.children.create([{:name=>"四条烏丸"}, {:name=>"三条"}, {:name=>"祇園"},{:name=>"南禅寺"},{:name=>"出町柳"},{:name=>"その他"}])
+
+
+
+
+
+
 
 
 

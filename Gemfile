@@ -71,7 +71,7 @@ gem 'pry-byebug'
 gem 'bootstrap', '~> 4.3.1'
 gem "jquery-rails"
 gem 'ratyrate'
-
+gem 'ancestry'
 
 gem 'dotenv-rails'
 group :production do
