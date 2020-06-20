@@ -54,12 +54,18 @@
 	display: flex;
 	flex-wrap: wrap-reverse;
 
-
 	& .box-image {
 	margin: 24px;
 	}
 }
+.follow-index {
+  & .follow-index-title {
+  margin-bottom: 50px;
+  }
+}
 .follow-box {
+  width: 550px;
+
   & .btn-follow-out {
   display: inline-block;
   padding: 0.3em 1em;
@@ -90,8 +96,17 @@
   padding-left: 12px;
   padding-right: 30px;
   }
+  
+
+}
+.follower-index {
+  & .follower-index-title {
+  margin-bottom: 50px;
+  }
 }
 .follower-box {
+  width: 550px;
+
   & .btn-follow-out {
   display: inline-block;
   padding: 0.3em 1em;
@@ -121,6 +136,10 @@
   & .follower-name {
   padding-left: 12px;
   padding-right: 30px;
+  }
+  & .follow-post-count {
+  padding-left: 40px;
+  padding-right: 40px;
   }
 }
 

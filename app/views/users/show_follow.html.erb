@@ -1,25 +1,34 @@
-<div class="row">
-	<div class="col-xs-10 ml-auto mr-auto">
-		<section class="follow-index">
-			<h2><%= @user.name %> さんのFollowリスト</h2>
-			<% @user.followings.each do |user| %>
-				<table class="follow-box">
-					<tr>
-					  <td>
-					  	<%= link_to user_path(user) do %>
-				  			<%= attachment_image_tag user, :profile_image, size: "40x40" ,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
-				  		<% end %>
-				  	</td>
-						<td class="follow-name">
-							<%= link_to user_path(user) do %>
-								<%= user.name %>
-			  			<% end %>
-			  		</td>
-			  		<td><%= render "relationships/follow_button", user: user %></td>
-					</tr>
-				</table>
-				<hr>
-			<% end %>
-		</section>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-10 ml-auto mr-auto">
+			<section class="follow-index">
+				<div class="follow-index-title">
+					<h2><%= @user.name %> さんのフォローリスト</h2>
+				</div>
+				<% @user.followings.each do |user| %>
+					<table class="follow-box">
+						<tr>
+						  <td>
+						  	<%= link_to user_path(user) do %>
+					  			<%= attachment_image_tag user, :profile_image, size: "40x40" ,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
+					  		<% end %>
+					  	</td>
+							<td class="follow-name">
+								<%= link_to user_path(user), class: "no-underline" do %>
+									<%= user.name %>
+				  			<% end %>
+				  		</td>
+				  		<td class="follow-post-count">
+				  			<span><i class="fas fa-camera-retro"></i></span>
+				  			:<%= user.posts.count %>
+				  		</td>
+				  		<td class="right"><%= render "relationships/follow_button", user: user %></td>
+						</tr>
+					</table>
+					<hr>
+				<% end %>
+				<div class="text-center"><%= paginate @users %></div>
+			</section>
+		</div>
 	</div>
 </div>

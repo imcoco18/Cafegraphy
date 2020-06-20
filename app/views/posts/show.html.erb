@@ -1,85 +1,87 @@
-<div class="row">
-	<div class="col-xs-12  ml-auto mr-auto">
-		<section class="post-show">
-			<span class="box-title">Cafegraphy</span>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12  ml-auto mr-auto">
+			<section class="post-show">
+				<span class="box-title">Cafegraphy</span>
 
-			<div class="post-item">
-				<div class="post-image">
-          <%= attachment_image_tag @post, :post_image, size: "480x480" %>
-        </div>
-        <div class="post-content">
-        	<div class="post-icons clearfix">
-				<!-- いいね機能 -->
-	        	<div class="float-left" id="like-<%= @post.id %>">
-							<%= render partial: 'likes/like', locals: {post: @post} %>
+				<div class="post-item">
+					<div class="post-image">
+	          <%= attachment_image_tag @post, :post_image, size: "480x480" %>
+	        </div>
+	        <div class="post-content">
+	        	<div class="post-icons clearfix">
+					<!-- いいね機能 -->
+		        	<div class="float-left" id="like-<%= @post.id %>">
+								<%= render partial: 'likes/like', locals: {post: @post} %>
+							</div>
+					<!-- コメント数 -->
+							<div class="comment-count float-left">
+								<span><i class="fa fa-comment"></i></span>
+								<%= @post.post_comments.count %>
+							</div>
+					<!-- 編集・削除アイコン -->
+		        		<% if @post.user == current_user %>
+		        		  <%= link_to edit_post_path(@post), class: "no-underline" do %>
+		        		  	<span class="post-edit"><i class="fas fa-edit"></i></span>
+		        		  <% end %>
+			              <%= link_to post_path(@post), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"} do %>
+			                <span class="post-delete"><i class="fas fa-trash-alt"></i></span>
+			              <% end %>
+			          	<% end %>
 						</div>
-				<!-- コメント数 -->
-						<div class="comment-count float-left">
-							<span><i class="fa fa-comment"></i></span>
-							<%= @post.post_comments.count %>
-						</div>
-				<!-- 編集・削除アイコン -->
-	        		<% if @post.user == current_user %>
-	        		  <%= link_to edit_post_path(@post), class: "no-underline" do %>
-	        		  	<span class="post-edit"><i class="fas fa-edit"></i></span>
-	        		  <% end %>
-		              <%= link_to post_path(@post), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"} do %>
-		                <span class="post-delete"><i class="fas fa-trash-alt"></i></span>
-		              <% end %>
-		          	<% end %>
-					</div>
 
-					<div class="post-body">
-	        	<h3 class="post-title"><%= @post.title %></h3>
-        		<h5><span><i class="fas fa-store"></i> <%= @post.shop_name %></h5></span>
-        		<div class="post-tags">
-	        		<% @post.tags.each do |tag| %>
-	        		  <span class="badge badge-info"><%= tag.name %></span>
-	        		<% end %>
+						<div class="post-body">
+		        	<h3 class="post-title"><%= @post.title %></h3>
+	        		<h5><span><i class="fas fa-store"></i> <%= @post.shop_name %></h5></span>
+	        		<div class="post-tags">
+		        		<% @post.tags.each do |tag| %>
+		        		  <span class="badge badge-info"><%= tag.name %></span>
+		        		<% end %>
+		        	</div>
 	        	</div>
-        	</div>
-					<div class="post-user float-right">
-						<span class="post-date"><%= @post.created_at.strftime('%Y/%m/%d') %></span>
-						<%= link_to user_path(@post.user.id), class: "no-underline" do %>
-							<%= attachment_image_tag @post.user, :profile_image, size: "40x40" ,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
-							<%= @post.user.name %>
-						<% end %>
+						<div class="post-user float-right">
+							<span class="post-date"><%= @post.created_at.strftime('%Y/%m/%d') %></span>
+							<%= link_to user_path(@post.user.id), class: "no-underline" do %>
+								<%= attachment_image_tag @post.user, :profile_image, size: "40x40" ,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
+								<%= @post.user.name %>
+							<% end %>
+						</div>
 					</div>
 				</div>
-			</div>
-			<!-- コメント機能 -->
-			<div class="comment-wrapper">
-				<p class="comment-title">コメント一覧</p>
-				<% @post.post_comments.each do |c| %>
-					<div class="comment-index">
-					  <div class="clearfix">
-					  	<%= c.comment %>
-					  </div>
-					  	<%= c.created_at.strftime('%Y/%m/%d') %>
-					  <div class="avatar">
-					  	<%= link_to user_path(c.user.id), class: "no-underline" do %>
-		          		<%= attachment_image_tag c.user, :profile_image, size: "30x30" ,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
-						  	<%= c.user.name %> 
-					  	<% end %>
-					  </div>
-
-					  <% if c.user == current_user %>
-						  <div class="comment-delete">
-						 		<%= link_to post_post_comment_path(c.post, c), method: :delete do %>
-						 			<i class="fas fa-trash-alt"></i>
-						 		<% end %>
+				<!-- コメント機能 -->
+				<div class="comment-wrapper">
+					<p class="comment-title">コメント一覧</p>
+					<% @post.post_comments.each do |c| %>
+						<div class="comment-index">
+						  <div class="clearfix">
+						  	<%= c.comment %>
 						  </div>
-					 	<% end %>
-				  </div>
-				  <hr>
-			  <% end %>
-			</div>
-			<div class="comment-form">
-				<%= form_for [@post, @post_comment] do |f| %>
-				  <%= f.text_area :comment, rows: "5", class: "form-control", placeholder: "コメント欄" %>
-				  <%= f.submit "投稿する", class: "btn btn-info float-right" %>
-				<% end %>
-			</div>
-		</section>
+						  	<%= c.created_at.strftime('%Y/%m/%d') %>
+						  <div class="avatar">
+						  	<%= link_to user_path(c.user.id), class: "no-underline" do %>
+			          		<%= attachment_image_tag c.user, :profile_image, size: "30x30" ,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
+							  	<%= c.user.name %> 
+						  	<% end %>
+						  </div>
+
+						  <% if c.user == current_user %>
+							  <div class="comment-delete">
+							 		<%= link_to post_post_comment_path(c.post, c), method: :delete do %>
+							 			<i class="fas fa-trash-alt"></i>
+							 		<% end %>
+							  </div>
+						 	<% end %>
+					  </div>
+					  <hr>
+				  <% end %>
+				</div>
+				<div class="comment-form">
+					<%= form_for [@post, @post_comment] do |f| %>
+					  <%= f.text_area :comment, rows: "5", class: "form-control", placeholder: "コメント欄" %>
+					  <%= f.submit "投稿する", class: "btn btn-info float-right" %>
+					<% end %>
+				</div>
+			</section>
+		</div>
 	</div>
 </div>
