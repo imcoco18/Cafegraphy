@@ -24,7 +24,8 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @post_comment = PostComment.new
-    like = Like.find_by(user_id: current_user.id, post_id: params[:id])
+    @post_comments = @post.post_comments.order(created_at: :desc)
+    
   end
 
   def edit
@@ -51,7 +52,8 @@ class PostsController < ApplicationController
     @q = Post.ransack(params[:q])
     @results = @q.result(distinct: true).order("created_at DESC").page(params[:page]).per(10)
     #タグ
-    #@tag_search = Post.tagged_with(params[:search])
+    @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all
+    # tag_idがあるかを確認(present? ?)
   end
 
   private

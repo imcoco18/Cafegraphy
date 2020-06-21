@@ -8,23 +8,31 @@
 	background-size:  cover;
 
 	& .home-content {
-		padding-top: 140px;
+	padding-top: 140px;
 
 	}
 	& .home-title {
-		padding: 5px 10px 1px 10px;
-		margin-bottom: 100px;
-		
+	padding: 5px 10px 1px 10px;
+	margin-bottom: 100px;
+
 
 	}
 	& .h2 {
-		color: #5E4983!important;
+	color: #5E4983!important;
 	}
 	& span {
-		margin-left: 20px;
-		margin-right: 20px;
-		padding: 5px 10px 1px 10px;
-		
+	font-size: 24px;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding: 5px 10px 1px 10px;
+	display: inline-block;
+    transition: .3s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+	}
+	& span:hover {
+	-webkit-transform: scale(1.1);
+    transform: scale(1.1);
 	}
 }
 
@@ -40,7 +48,7 @@
 	& .title-box {
 	background-color:rgba(255,255,255,0.7);
 	height: 450px;
-	width: 700px;
+	width: 750px;
 	padding: 100px 20px;
 	margin-top: 100px;
 	}
@@ -53,13 +61,32 @@
 	}
 	& .body-container {
 	height: 500px;
-	width: 700px;
+	width: 750px;
 	margin-top: 100px;
 	padding: 50px 0;
 	background-color:rgba(255,255,255,0.7);
 	}
 	& .body-box {
+	background-color: white;
+	height: 100px;
+	width: 200px;
+	float: left;
+	margin: 25px 0;
+	padding: 10px 0;
 
+	}
+	& p {
+	margin-bottom: 0!important;
+	}
+	& .body-box:first-child {
+	margin-left: 50px;
+	}
+	& .body-box:nth-child(2) {
+	margin-left: 25px;
+	margin-right: 25px;
+	}
+	& .body-box:last-child {
+	margin-right: 50px;
 	}
 
 }

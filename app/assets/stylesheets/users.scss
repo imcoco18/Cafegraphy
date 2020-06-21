@@ -211,7 +211,48 @@
   }
 }
 
+.user-rank {
+  width: 700px;
 
+  & .user-rank-title {
+  margin-bottom: 50px;
+  }
+  & .btn-follow-out {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+  }
+  & .btn-follow-out:hover {
+  background: #67c5ff;
+  color: white;
+  }
+  & .btn-follow {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #EA8BC5;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+  }
+  & .btn-follow:hover {
+  background: #EA8BC5;
+  color: white;
+  }
+  & .cafegrapher-name {
+  padding-left: 12px;
+  padding-right: 100px;
+  
+  }
+  & .follow-post-count {
+  padding-left: 40px;
+  padding-right: 40px;
+  }
+}
 
 
 

@@ -101,17 +101,59 @@
     margin-right: 5px;
     }
 }
+
+.comment-wrapper {
+    
+    & .comment-title {
+    font-weight: bold;
+    }
+    & h6 {
+    color: blue;
+    font-weight: bold;
+    }
+    & .comment-date {
+    font-size: 12px;
+    }
+    & .comment-delete {
+    text-align: right;
+    }
+    & .comment-text {
+    margin: 10px 0 0 15px;
+    }
+}
+
 .comment-form {
     margin-top: 10px;
-    padding-bottom: 64px;
 
-    & .btn {
+
+    & .comment-btn {
     margin-top: 10px;
+    width: 100%;
+    background: #AA8DC9;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 2px 8px;
+    color: #fff;
+    border: none;
+    border-bottom: 5px solid #CB64B2;  
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+    }
+    & .comment-btn:hover {
+    background: #ED70B6;
+    -webkit-transform: translate(0, 4px);
+    border-bottom: 2px solid #CB64B2;  
+    box-shadow: inset 0px 0px 10px 10px #CF5DB2;
+    cursor: pointer;
     }
 }
 
 .post-new {
     
+    & .post-new-form {
+    width: 650px;
+    }
     & .new-btn {
     width: 100%;
     background: #AA8DC9;
@@ -134,6 +176,67 @@
     }
 
 }
+.post-edit {
+
+    & .post-edit-form {
+    width: 650px;
+    }
+    & .edit-btn {
+    width: 100%;
+    background: #AA8DC9;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 2px 8px;
+    color: #fff;
+    border: none;
+    border-bottom: 5px solid #CB64B2;  
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+    }
+    & .edit-btn:hover {
+    background: #ED70B6;
+    -webkit-transform: translate(0, 4px);
+    border-bottom: 2px solid #CB64B2;  
+    box-shadow: inset 0px 0px 10px 10px #CF5DB2;
+    cursor: pointer;
+    }
+}
+
+.search-index{
+    
+    & .new-btn {
+    width: 100%;
+    background: #AA8DC9;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 2px 8px;
+    color: #fff;
+    border: none;
+    border-bottom: 5px solid #CB64B2;  
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+    }
+    & .new-btn:hover {
+    background: #ED70B6;
+    -webkit-transform: translate(0, 4px);
+    border-bottom: 2px solid #CB64B2;  
+    box-shadow: inset 0px 0px 10px 10px #CF5DB2;
+    cursor: pointer;
+    }
+    & .boards__searchForm {
+      display: inline-block;
+    }
+
+    & .boards__select {
+      display: inline-block;
+      width: auto;
+    }
+
+}
+
+
 
 
 

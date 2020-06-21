@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
 
   def index
-    @all_ranks = User.create_all_ranks
+    @all_ranks = User.create_all_ranks.limit(3).pluck(:note_id)
   end
 
   def show

@@ -2,20 +2,26 @@
 	<div class="row">
 		<div class="col-xs-12 ml-auto mr-auto">
 			<section class="user-rank">
-				<h2>人気のカフェグラファー</h2>
-				<% @all_ranks.each do |user_rank| %>
+				<div class="user-rank-title">
+					<h2>人気のカフェグラファー</h2>
+				</div>
+				<% @all_ranks.each.with_index(1) do |user_rank, i| %>
 					<div class="user-rank-box">
-						<table>
+						<table class="table-sm">
 							<tbody>
 								<tr>
-									<td></td>
-									<td>
-										<%= link_to user_path(user_rank.id) do %>
+									<td>No.<%= i %></td>
+									<td class="cafegrapher-name">
+										<%= link_to user_path(user_rank.id),class: "no-underline" do %>
 											<%= attachment_image_tag user_rank, :profile_image, size: "40x40" ,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
 											<%= user_rank.name %>
 										<% end %>
 									</td>
 									<td>フォロワー:<%= user_rank.followers.count %></td>
+									<td class="follow-post-count">
+								  	<span><i class="fas fa-camera-retro"></i></span>
+						  			:<%= user_rank.posts.count %>
+						  		</td>
 									<td><%= render "relationships/follow_button", user: user_rank %></td>
 								</tr>
 							</tbody>
