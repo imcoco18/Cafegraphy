@@ -4,7 +4,7 @@
 			<div class="col-sm-12">
 				<div class="title-box">
 					<h1>What's Cafegraphy ?</h1>
-					<h5 class="title-sub">~最高のカフェタイムを自慢しよう~</h5>
+					<h4 class="title-sub">~最高のカフェタイムを自慢しよう~</h4>
 					<P>Cafegraphyはカフェの写真投稿サイトです。<br>
 						カフェでのひとときを<br>
 						カフェグラファー（カフェをこよなく愛する人々）に共有できます。<br>
@@ -14,10 +14,10 @@
 			</div>
 			<div class="col-sm-12">
 				<div class="body-container">
-					<h3>Cafegraphyでは、</h3>
+					<div class="about-body-title"><h3>Cafegraphyに登録すると..<i class="fas fa-coffee"></i></h3></div>
 					<ul>
 						<div class="body-box">
-							<li>投稿写真にいいね、<br>コメントができる！</li>
+							<li>みんなの投稿写真に<br>いいね・コメントが<br>できる！</li>
 							<P><i class="far fa-heart"></i></P>
 						</div>
 						<div class="body-box">
@@ -25,24 +25,46 @@
 							<P><i class="fas fa-user"></i></P>
 						</div>
 						<div class="body-box">
-							<li>たくさん投稿すると<br>ランキングに載るかも！</li>
+							<li>人気のカフェグラファーになると<br>ランキングに掲載される！</li>
 							<P><i class="fas fa-seedling"></i></P>
 						</div>
-					</ul>
-					<ul>
 						<div class="body-box">
 							<P><i class="fas fa-heart"></i></P>
-							<li>投稿写真にいいね、<br>コメントができる！</li>
+							<li>素敵な写真を投稿すると、<br>たくさんいいね・コメントがもらえるかも！</li>
 						</div>
 						<div class="body-box">
 							<P><i class="fas fa-user-friends"></i></P>
-							<li>気になるカフェグラファーをフォローできる！</li>
+							<li>たくさんフォローすると<br>あなたにもフォロワーができるかも！</li>
 						</div>
 						<div class="body-box">
 							<P><i class="fas fa-crown"></i></P>
-							<li>たくさん投稿すると<br>ランキングに載るかも！</li>
+							<li>カフェ写真を投稿して<br>ランキング上位を<br>目指そう！</li>
 						</div>
 					</ul>
+				</div>
+			</div>
+			<div class="col-sm-12">
+				<div class="about-image-container">
+					<div class="about-image-box">
+						<div class="img1"></div>
+						<div class="img2"></div>
+					</div>
+					<div class="about-image-sub">
+						<p>眠っているカフェの写真はありませんか？<br>
+							あなただけの素敵な写真をコレクションしよう！
+						</p>
+						<p><span><i class="fas fa-exclamation-triangle fa-fw"></i></span>カフェに関係ない写真はお断りです。</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12">
+				<div class="link-container">
+					<h3><span><i class="fas fa-sort-down fa-fw fa-2x"></i></span>今すぐCafegraphyを始めよう！<span><i class="fas fa-sort-down fa-fw fa-2x"></i></span></h3>
+					<div class="about-link-box">
+						<%= link_to new_user_registration_path, class: "no-underline about-link-btn" do %>
+							<span><i class="fas fa-angle-double-right fa-fw"></i></span>新規登録をする
+						<% end %>
+					</div>
 				</div>
 			</div>
 		</div>
