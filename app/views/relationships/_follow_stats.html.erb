@@ -1,15 +1,15 @@
 <% user ||= current_user %>
 <div class="stats">
-  <%= link_to following_user_path(user) do %>
+  <%= link_to following_user_path(user), class: "no-underline btn-hover" do %>
     <strong id="following-count_<%= user.id %>" class="stat">
-      <%= user.followings.count %>
+      <span><%= user.followings.count %>following</span>
     </strong>
-    following
+    
   <% end %>|
-  <%= link_to followers_user_path(user) do %>
+  <%= link_to followers_user_path(user), class: "no-underline btn-hover" do %>
     <strong id="followers-count_<%= user.id %>" class="stat">
-      <%= user.followers.count %>
+      <span><%= user.followers.count %>followers</span>
     </strong>
-    followers
+    
   <% end %>
 </div>

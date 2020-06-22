@@ -9,9 +9,13 @@
 						<%= render partial: "layouts/error", locals: {post: @post} %>
 						
 						<div class="post-new-box col-xs-12">
-							<div class="new-img form-group">
+							<div class="img_field">
+								<span>no image</span>
+        					</div>
+							<div id="post_image" class="new-img form-group">
 								<%= f.attachment_field :post_image, class: "image" %>
 							</div>
+
 							<div class="new-title form-group">
 								<%= f.text_field :title, class: "form-control", placeholder:"タイトル" %>
 							</div>

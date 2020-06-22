@@ -20,4 +20,13 @@
 //= require popper
 //= require bootstrap-sprockets
 
+// post new
+$(function() {
+    // 画像をアップしたら表示する
+    // jQuery Upload Thumbs
+    $('form input:file').uploadThumbs();
 
+    // サクセスメッセージを秒数で消す
+    
+    setTimeout("$('#flash').fadeOut('slow')", 2000);
+});

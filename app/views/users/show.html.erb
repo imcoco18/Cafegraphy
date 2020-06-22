@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-xs-10.offset-xs-2 ml-auto mr-auto">
 				<div class="mypage-profile text-center">
-					<p><%= attachment_image_tag(@user, :profile_image, size: "100x100" ,fallback: "Cafegraphy.jpg", class: "rounded-circle") %>
+					<p><%= attachment_image_tag(@user, :profile_image, size: "130x130" ,fallback: "Cafegraphy.jpg", class: "rounded-circle") %>
 					</p>
 					<% if @user == current_user %>
 					<span class="edit-link">
@@ -31,7 +31,7 @@
 					<% @posts.each do |post| %>
 					<div class="box-image">
 					 <%= link_to post_path(post.id) do %>
-	                  <%= attachment_image_tag(post, :post_image, size: "200x200") %>
+	                  <%= attachment_image_tag(post, :post_image, size: "230x230") %>
 	                 <% end %>
 	                </div>
 					<% end %>

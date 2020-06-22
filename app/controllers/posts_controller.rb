@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.page(params[:page]).per(6).order(id: "DESC")
+    #モデルから持ってきてる
     @all_ranks = Post.create_all_ranks
   end
 
@@ -50,9 +51,9 @@ class PostsController < ApplicationController
   def search
     #キーワード
     @q = Post.ransack(params[:q])
-    @results = @q.result(distinct: true).order("created_at DESC").page(params[:page]).per(10)
+    @results = @q.result(distinct: true).order("created_at DESC").page(params[:page]).per(5)
     #タグ
-    @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all
+    @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all.order("created_at DESC").page(params[:page]).per(5)
     # tag_idがあるかを確認(present? ?)
   end
 

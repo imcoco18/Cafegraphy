@@ -43,11 +43,11 @@ ul {
 }
 
 header {
-	height: 200px;
+	height: 190px;
 	width: 100%;
-	background: -moz-linear-gradient(top, #8177A5, #99CBE8 40%, #EFEDED 60%, #FFF);
-  background: -webkit-linear-gradient(top, #8177A5, #99CBE8 40%, #EFEDED 60%, #FFF);
-  background: linear-gradient(to bottom, #8177A5, #99CBE8 40%, #EFEDED 60%, #FFF);
+	background: -moz-linear-gradient(top, #8177A5, #99CBE8 50%, #EFEDED 80%, #FFF);
+  background: -webkit-linear-gradient(top, #8177A5, #99CBE8 50%, #EFEDED 80%, #FFF);
+  background: linear-gradient(to bottom, #8177A5, #99CBE8 50%, #EFEDED 80%, #FFF);
 
   	& .title {
   	 text-align: center;
@@ -75,11 +75,11 @@ header {
 }
 
 footer {
-	padding-top: 30px;
+
 	width: 100%;
-	background: -moz-linear-gradient(bottom, #8177A5, #99CBE8 40%, #EFEDED 50%, #FFF);
-  	background: -webkit-linear-gradient(bottom, #8177A5, #99CBE8 40%, #EFEDED 50%, #FFF);
-  	background: linear-gradient(to top, #8177A5, #99CBE8 40%, #EFEDED 50%, #FFF);
+	  background: -moz-linear-gradient(bottom, #8177A5, #99CBE8 50%, #EFEDED 80%, #FFF);
+  	background: -webkit-linear-gradient(bottom, #8177A5, #99CBE8 50%, #EFEDED 80%, #FFF);
+  	background: linear-gradient(to top, #8177A5, #99CBE8 50%, #EFEDED 80%, #FFF);
 
   	& .footer-menu {
   	 text-align: center;
@@ -110,7 +110,11 @@ footer {
 
 .wrapper {
   width: 500px;
-  margin: 5% auto 0 auto; 
+  margin: 5% auto 50px auto; 
+  padding: 50px 40px 10px 40px;
+  border: solid 3px #AA8DC9;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0,0,0,.4);
 }
 .font {
   font-size: 16px;

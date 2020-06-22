@@ -2,6 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.fa-cog {
+  display: inline-block;
+  transition: .3s;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.fa-cog:hover {
+  color: #8EDDF9;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
 .mypage-profile-name {
   margin: 1em 0;
   padding: 1em;
@@ -15,7 +27,17 @@
   margin-top: 20px;
   margin-bottom: 10px!important;
   }
-
+  & span {
+    display: inline-block;
+    transition: .3s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  & span:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    color: #8177A5;
+  }
   & .btn-follow-out {
   display: inline-block;
   padding: 0.5em 1em;
@@ -209,6 +231,7 @@
   box-shadow: inset 0px 0px 10px 10px #CF5DB2;
   cursor: pointer;
   }
+  
 }
 
 .user-rank {

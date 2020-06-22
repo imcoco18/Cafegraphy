@@ -2,7 +2,8 @@ class UsersController < ApplicationController
 
 
   def index
-    @all_ranks = User.create_all_ranks.limit(3).pluck(:note_id)
+    #モデルから持ってきている
+    @all_ranks = User.create_all_ranks
   end
 
   def show
@@ -22,13 +23,13 @@ class UsersController < ApplicationController
 
   def following
       @user  = User.find(params[:id])
-      @users = @user.followings.page(params[:page]).per(6)
+      @users = @user.followings.page(params[:page]).per(8)
       render 'show_follow'
   end
 
   def followers
     @user  = User.find(params[:id])
-    @users = @user.followers.page(params[:page]).per(6)
+    @users = @user.followers.page(params[:page]).per(8)
     render 'show_follower'
   end
 

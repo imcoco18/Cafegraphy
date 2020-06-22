@@ -7,12 +7,18 @@
 					<p>最高のカフェタイムを自慢しよう</p>
 				</div>
 				<div class="home-link">
+					<% if user_signed_in? %>
+						<%= link_to posts_path, class: "no-underline" do %>
+							<span><i class="fas fa-camera-retro fa-fw"></i>Topページへ</span>
+						<% end %>
+					<% else %>
 						<%= link_to new_user_registration_path, class: "no-underline btn-hover" do %>
-							<span><i class="fas fa-camera-retro"></i>新規登録</span>
+							<span><i class="fas fa-camera-retro fa-fw"></i>新規登録</span>
 						<% end %>
 						<%= link_to new_user_session_path, class: "no-underline btn-hover" do %>
-							<span><i class="fas fa-sign-in-alt"></i>ログイン</span>
+							<span><i class="fas fa-sign-in-alt fa-fw"></i>ログイン</span>
 						<% end %>
+					<% end %>
 				</div>
 			</div>
 		</div>

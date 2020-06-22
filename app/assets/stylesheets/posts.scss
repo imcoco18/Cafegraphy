@@ -17,6 +17,23 @@
     & .post-rank-user {
     margin-bottom: 5px;
     }
+    & .fa-crown {
+    color: #E8D910;
+    }
+    & h5 {
+    display: inline-block;
+    transition: .3s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    color: #1D85D8;
+    font-weight: bold;
+    }
+    & h5:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    color: #AA8DC9;
+    font-weight: bold;
+    }
 }
 
 .post-index {
@@ -174,6 +191,19 @@
     box-shadow: inset 0px 0px 10px 10px #CF5DB2;
     cursor: pointer;
     }
+    & .img_field {
+      width: 250px;
+      height: 250px;
+      text-align: center;
+      background-image: url(logo1.jpg);
+      background-size: contain;
+    }
+     form img.thumb {
+        margin: 0 5px 5px 0;
+        max-width: 250px;
+        height: 250px;
+        vertical-align: bottom;
+     }
 
 }
 .post-edit {

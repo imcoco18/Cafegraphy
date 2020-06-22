@@ -23,6 +23,6 @@ class Post < ApplicationRecord
     Post.find(Like.group(:post_id).order("count(post_id) desc").limit(4).pluck(:post_id))
   end
 
-  validates :title, :post_image, :shop_name, :category_id, presence: true
+  validates :title, :post_image, :shop_name, presence: true
   validates :title, :shop_name, length: {maximum: 25}
 end

@@ -2,24 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .home {
-	height: 680px;
+	height: auto;
 	width: 100%;
 	background-image: url(background-cafe.jpg);
+	background-attachment: fixed;
 	background-size:  cover;
 
 	& .home-content {
 	padding-top: 140px;
-
+	height:660px;
+	}
+	& h1 {
+	font-size: 60px;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	color: #5E5F62;
+	}
+	& p {
+	color: #5E5F62;
+	font-size: 18px;
 	}
 	& .home-title {
 	padding: 5px 10px 1px 10px;
-	margin-bottom: 100px;
+	margin-bottom: 70px;
 
 
 	}
-	& .h2 {
-	color: #5E4983!important;
-	}
+
 	& span {
 	font-size: 24px;
 	margin-left: 20px;
@@ -29,10 +38,14 @@
     transition: .3s;
     -webkit-transform: scale(1);
     transform: scale(1);
+    color: #1D85D8;
+    font-weight: bold;
 	}
 	& span:hover {
-	-webkit-transform: scale(1.1);
-    transform: scale(1.1);
+	-webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    color: #AA8DC9;
+    font-weight: bold;
 	}
 }
 
