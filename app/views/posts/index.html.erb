@@ -1,25 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 ml-auto mr-auto post-index-top">
-			<section class="post-rank clearfix">
-				<h3><span><i class="fas fa-crown fa-fw"></i></span>人気投稿</h3>
-				<% @all_ranks.each do |post_rank| %>
-					<div class="post-rank-box">
-						<div class="post-rank-user">
-							<%= link_to user_path(post_rank.user.id), class: "no-underline" do %>
-							<%= attachment_image_tag post_rank.user, :profile_image, size: "40x40" ,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
-							<%= post_rank.user.name %>
-							<% end %>
-						</div>
-						<%= link_to post_path(post_rank.id) do %>
-							<%= attachment_image_tag(post_rank, :post_image, size: "160x160") %>
-						<% end %>
-					</div>
-				<% end %>
-			</section>
-			<%= link_to users_path do %>
-				<h5 class="float-right">＞＞人気のユーザーを見る</h5>
-			<% end %>
+			<%= render partial: 'popularity', locals: {all_ranks: @all_ranks} %>
 		</div>
 	</div>
 
@@ -60,4 +42,3 @@
 		</div>
 	</div>
 </div>
-

@@ -11,8 +11,18 @@
     margin-bottom: 10px;
     }
     & .post-rank-box {
+    font-size: 12px;
     float: left;
     margin:10px 20px;
+    transition: .3s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    }
+    & .post-rank-box:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(0,0,0,.3);
     }
     & .post-rank-user {
     margin-bottom: 5px;
@@ -119,52 +129,7 @@
     }
 }
 
-.comment-wrapper {
-    
-    & .comment-title {
-    font-weight: bold;
-    }
-    & h6 {
-    color: blue;
-    font-weight: bold;
-    }
-    & .comment-date {
-    font-size: 12px;
-    }
-    & .comment-delete {
-    text-align: right;
-    }
-    & .comment-text {
-    margin: 10px 0 0 15px;
-    }
-}
 
-.comment-form {
-    margin-top: 10px;
-
-
-    & .comment-btn {
-    margin-top: 10px;
-    width: 100%;
-    background: #AA8DC9;
-    border-radius: 5px;
-    font-size: 18px;
-    padding: 2px 8px;
-    color: #fff;
-    border: none;
-    border-bottom: 5px solid #CB64B2;  
-    -webkit-transition: all 0.5s ease 0s;
-    -moz-transition: all 0.5s ease 0s;
-    transition: all 0.5s ease 0s;
-    }
-    & .comment-btn:hover {
-    background: #ED70B6;
-    -webkit-transform: translate(0, 4px);
-    border-bottom: 2px solid #CB64B2;  
-    box-shadow: inset 0px 0px 10px 10px #CF5DB2;
-    cursor: pointer;
-    }
-}
 
 .post-new {
     

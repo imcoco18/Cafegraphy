@@ -1,4 +1,4 @@
-<%= form_with(model: [post, post_comment], url: post_post_comments_path(post) ) do |f| %>
-  <%= f.text_area :comment, rows: "5", class: "form-control", placeholder: "コメント欄" %>
-  <%= f.submit "投稿する", class: "comment-btn" %>
+<%= form_with(model: [post, post_comment], url: post_post_comments_path(post), method: :post, remote: true ) do |f| %>
+  <%= f.text_area :comment, class: "form-control", placeholder: "コメント欄" %>
+  <%= f.submit "投稿する", id: 'submit', class: "comment-btn" %>
 <% end %>

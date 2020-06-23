@@ -1,0 +1,16 @@
+$('#comments_index-<%= @post.id %>').html("<%= j(render partial: 'index', locals: { post: @post, post_comment: @post_comment }) %>");
+$("textarea").val("");
+
+//comment validates
+$(function() {
+  if ( $("textarea").val().length == 0 ) {
+    $('#submit').prop('disabled', true);
+  }
+  $("textarea").bind('keydown keyup keypress change', function() {
+    if ( $(this).val().length > 0 ) {
+      $('#submit').prop('disabled', false);
+    } else {
+      $('#submit').prop('disabled', true);
+    }
+  });
+});

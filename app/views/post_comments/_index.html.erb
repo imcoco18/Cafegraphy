@@ -24,7 +24,7 @@
 
 		  <% if c.user == current_user %>
 			  <div class="comment-delete">
-			 		<%= link_to post_post_comment_path(c.post, c), method: :delete do %>
+			 		<%= link_to post_post_comment_path(c.post, c), method: :delete, remote: true do %>
 			 			<span><i class="fas fa-trash-alt"></i></span>
 			 		<% end %>
 			  </div>
@@ -53,7 +53,7 @@
 
 		  <% if c.user == current_user %>
 			  <div class="comment-delete">
-			 		<%= link_to post_post_comment_path(c.post, c), method: :delete do %>
+			 		<%= link_to post_post_comment_path(c.post, c), method: :delete, remote: true do %>
 			 			<span><i class="fas fa-trash-alt"></i></span>
 			 		<% end %>
 			  </div>
@@ -61,4 +61,7 @@
 	  </div>
 	  <hr>
   <% end %>
+</div>
+<div class="comment-form">
+	<%= render partial: 'post_comments/form', locals: { post: post, post_comment: post_comment } %>
 </div>

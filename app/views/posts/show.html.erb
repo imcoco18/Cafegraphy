@@ -44,12 +44,9 @@
 					</div>
 				</div>
 				<!-- コメント機能 -->
-				<div id="comments_area">
-          <%= render partial: 'post_comments/index', locals: { post: @post } %>
+				<div id="comments_index-<%= @post.id %>">
+          <%= render partial: 'post_comments/index', locals: { post: @post, post_comment: @post_comment } %>
         </div>
-				<div class="comment-form">
-					<%= render partial: 'post_comments/form', locals: { post: @post, post_comment: @post_comment } %>
-				</div>
 			</section>
 		</div>
 	</div>
