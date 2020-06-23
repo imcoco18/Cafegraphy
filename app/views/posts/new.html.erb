@@ -24,17 +24,6 @@
 								<%= f.text_field :shop_name, class: "form-control", placeholder:"店名" %>
 							</div>
 
-							<!-- <div class="new-category">
-								<p>エリアを一つ選択</p>
-									<%= f.collection_check_boxes(:category_id, Category.all, :id, :name) do |category| %>
-										<div class="form-check form-check-inline">
-						                <%= category.label class: "form-check-label tag-label" do %>
-					                    <%= category.check_box class: "form-check-input" %>
-					                    <%= category.text %>
-				          					<% end %>
-			      				</div>
-									<% end %>
-							</div> -->
 							<div class="new-tags form-group">
 								<p>複数選択可能</p>
 							    <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
@@ -48,7 +37,7 @@
 		    			</div>
 
 		    			<div class="actions">
-								<%= f.submit "投稿する", class: "new-btn" %>
+								<%= f.submit "投稿する", id: 'submit', class: "new-btn" %>
 							</div>
 
 						</div>

@@ -200,6 +200,13 @@
 
 .search-index{
     
+    & .search-keyword_shop_name {
+    padding: 10px 20px;
+    transition: .3s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    }
     & .new-btn {
     width: 100%;
     background: #AA8DC9;

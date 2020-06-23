@@ -111,7 +111,7 @@ footer {
 
 .wrapper {
   width: 500px;
-  margin: 5% auto 50px auto; 
+  margin: 5% auto 50px auto;
   padding: 50px 40px 10px 40px;
   border: solid 3px #AA8DC9;
   border-radius: 10px;
@@ -123,7 +123,7 @@ footer {
   width: 100%;
 }
 .form {
-  text-align: center!important; 
+  text-align: center!important;
   -webkit-animation: bounce 1.5s infinite;
   -moz-animation: bounce 1.5s infinite;
   animation: bounce 1.5s infinite;
@@ -132,9 +132,9 @@ footer {
   box-shadow: 0px 0px 20px 5px #AAA;
   opacity: 0.5;
   border-radius: 100px;
-  width: 45%; 
+  width: 45%;
   margin: 40px auto 0 auto;
-  padding: 0 10px;  
+  padding: 0 10px;
   -webkit-animation: shadow 1.5s infinite;
 }
 .field-in {
@@ -149,7 +149,7 @@ footer {
   transition: all 0.5s ease 0s;
 }
 .name {
-  background-color: #7239C1;  
+  background-color: #7239C1;
   border-bottom: 5px solid #502789;
 }
 .name:hover{
@@ -161,14 +161,14 @@ footer {
   padding:15px;
 }
 .email {
-  background-color: #AA8DC9;  
+  background-color: #AA8DC9;
   border-bottom: 5px solid #CB64B2;
 }
 .email:hover{
   background-color: #5C25C5;
   border-bottom: 5px solid #18108E;
 }
-.password {   
+.password {
   background-color: #0F9BE6;
   border-bottom: 5px solid #1185C3;
 }
@@ -176,7 +176,7 @@ footer {
   background-color: #2DD7BB;
   border-bottom: 5px solid #2BB09A;
 }
-.password-con {   
+.password-con {
   background-color: #8EDDF9;
   border-bottom: 5px solid #1185C3;
 }
@@ -188,30 +188,30 @@ footer {
   width: 180px;
   border-radius:5px;
   padding:10px;
-  background-color: #EE78D1;  
+  background-color: #EE78D1;
   border: none;
-  border-bottom: 5px solid #CB64B2;  
+  border-bottom: 5px solid #CB64B2;
   -webkit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
 }
 .submit:hover{
   -webkit-transform: translate(0, 4px);
-  border-bottom: 2px solid #CB64B2;  
+  border-bottom: 2px solid #CB64B2;
   box-shadow: inset 0px 0px 10px 10px #CF5DB2;
   cursor: pointer;
 }
 .submit-password {
- 
+
   border-radius:5px;
   background-color: #EE78D1;
   border: none;
-  border-bottom: 5px solid #CB64B2;  
+  border-bottom: 5px solid #CB64B2;
   -webkit-transition: all 0.5s ease 0s;
 }
 .submit-password:hover {
   -webkit-transform: translate(0, 4px);
-  border-bottom: 2px solid #CB64B2;  
+  border-bottom: 2px solid #CB64B2;
   box-shadow: inset 0px 0px 10px 10px #CF5DB2;
   cursor: pointer;
 }
@@ -219,21 +219,21 @@ footer {
    color: white;
 }
 
-:-moz-placeholder { 
+:-moz-placeholder {
    color: white;
 }
 
-::-moz-placeholder { 
-   color: white; 
+::-moz-placeholder {
+   color: white;
 }
 
-:-ms-input-placeholder {  
-   color: white;  
+:-ms-input-placeholder {
+   color: white;
 }
 
 @-webkit-keyframes bounce{
   0%{
-    
+
   }
   50%{
     -webkit-transform: translate(0, 8px);
@@ -241,7 +241,7 @@ footer {
 }
 @-moz-keyframes bounce{
   0%{
-    
+
   }
   50%{
     -moz-transform: translate(0, 8px);
@@ -249,7 +249,7 @@ footer {
 }
 @keyframes bounce{
   0%{
-    
+
   }
   50%{
     transform: translate(0, 8px);
@@ -257,7 +257,7 @@ footer {
 }
 @-webkit-keyframes shadow{
   0%{
-    
+
   }
   50%{
     opacity: 0.8;
@@ -266,7 +266,7 @@ footer {
 }
 @-moz-keyframes shadow{
   0%{
-    
+
   }
   50%{
     opacity: 0.8;
@@ -275,7 +275,7 @@ footer {
 }
 @keyframes shadow{
   0%{
-    
+
   }
   50%{
     opacity: 0.8;
@@ -284,4 +284,30 @@ footer {
 }
 .actions {
   margin-bottom: 60px;
+}
+
+/*ページネーションデザイン*/
+.pagination>li>a {
+  border: none;
+  color: #696969;
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>.page-link {
+  background-color: #8EDDF9;
+  border-radius: 20px;
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {
+  border-radius: 20px;
+  background-color: #AA8DC9;
+}
+#back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+#back img {
+  width: 100px;
 }
