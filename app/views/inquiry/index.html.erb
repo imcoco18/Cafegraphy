@@ -1,0 +1,47 @@
+<section class="inquiry-index">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 ml-auto mr-auto">
+				<%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
+				  <div class="page-header">
+				    <h1>お問い合わせ</h1>
+				  </div>
+
+				  <% if @inquiry.errors.any? %>
+				    <div class="alert alert-danger" role="alert">
+				      <strong>入力内容にエラーがあります</strong>
+				      <ul>
+				        <% @inquiry.errors.each do |attr, msg| %>
+				          <li><%= msg %></li>
+				        <% end %>
+				      </ul>
+				    </div>
+				  <% end %>
+
+				  <table class="table">
+				    <tr>
+				    	<div class="form-group">
+					      <th>名前<span class="text-danger">（必須）</span></th>
+					      <td><%= f.text_field :name %></td>
+					  	</div>
+				    </tr>
+				    <tr>
+				    	<div class="form-group">
+					      <th>メールアドレス<span class="text-danger">（必須）</span></th>
+					      <td><%= f.text_field :email %></td>
+					  	</div>
+				    </tr>
+				    <tr>
+				    	<div class="form-group">
+					      <th>お問い合わせ内容</th>
+					      <td><%= f.text_area :message %></td>
+					  	</div>
+				    </tr>
+				  </table>
+				  <%= f.submit '確認', class: 'submit float-right' %>
+				<% end %>
+				<%= link_to "前に戻る", 'javascript:history.back()', class: "no-underline back-btn" %>
+			</div>
+		</div>
+	</div>
+</section>

@@ -30,6 +30,7 @@
 				<% end %>
 				<div class="text-center"><%= paginate @users %></div>
 			</section>
+			<%= link_to "前に戻る", 'javascript:history.back()', class: "no-underline back-btn" %>
 		</div>
 	</div>
 </div>

@@ -49,7 +49,7 @@
           <%= render partial: 'post_comments/index', locals: { post: @post, post_comment: @post_comment } %>
         </div>
 			</section>
-
+			<%= link_to "前に戻る", 'javascript:history.back()', class: "no-underline back-btn" %>
 		</div>
 	</div>
 </div>
