@@ -1,0 +1,40 @@
+<% if user_signed_in? %>
+    <div id="sp-menu">
+      <h2>MENU</h2>
+      <ul>
+        <li>
+          <%= link_to user_path(current_user.id), class: "no-underline" do %>
+            <span><i class="fas fa-user fa-fw"></i>MY PAGE</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_post_path, class: "no-underline" do %>
+            <span><i class="fas fa-kiwi-bird fa-fw"></i>投稿する</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to search_posts_path, class: "no-underline" do %>
+            <span><i class="fas fa-search fa-fw"></i>検索</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to posts_path, class: "no-underline" do %>
+            <span><i class="fas fa-images fa-fw"></i>最新の投稿一覧</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to users_path, class: "no-underline" do %>
+            <span><i class="fas fa-crown fa-fw"></i>人気のCafegrapher</span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+
+    <div id="hm-icon">
+      <a class="menu-trigger" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div>
+    <% end %>

@@ -52,9 +52,21 @@
 
     & .post-index-box{
     position: relative;
-    margin: 30px;
+    margin: 40px;
     padding: 32px 24px 48px 24px;
+    transition: .3s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
     border: solid 3px #99CBE8;
+    }
+    & .post-index-box:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0,0,0,.3);
+    }
+    & .post-tags {
+    width: 300px;
     }
 
     & .view {
@@ -75,6 +87,8 @@
     margin-top: 10px;
     }
 }
+
+
 .post-show {
 	position: relative;
     margin: 2em 0;
@@ -92,6 +106,9 @@
     background: #FFF;
     color: #95ccff;
     font-weight: bold;
+    }
+    & .post-tags {
+    width: 300px;
     }
 }
 .tag-label {
@@ -132,7 +149,7 @@
 
 
 .post-new {
-    
+
     & .post-new-form {
     width: 650px;
     }
@@ -144,7 +161,7 @@
     padding: 2px 8px;
     color: #fff;
     border: none;
-    border-bottom: 5px solid #CB64B2;  
+    border-bottom: 5px solid #CB64B2;
     -webkit-transition: all 0.5s ease 0s;
     -moz-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s;
@@ -152,7 +169,7 @@
     & .new-btn:hover {
     background: #ED70B6;
     -webkit-transform: translate(0, 4px);
-    border-bottom: 2px solid #CB64B2;  
+    border-bottom: 2px solid #CB64B2;
     box-shadow: inset 0px 0px 10px 10px #CF5DB2;
     cursor: pointer;
     }
@@ -163,12 +180,12 @@
       background-image: url(logo1.jpg);
       background-size: contain;
     }
-     form img.thumb {
+    form img.thumb {
         margin: 0 5px 5px 0;
         max-width: 250px;
         height: 250px;
         vertical-align: bottom;
-     }
+    }
 
 }
 .post-edit {

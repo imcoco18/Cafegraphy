@@ -11,8 +11,6 @@
 // about supported directives.
 //
 //= require jquery3
-//= require jquery.raty
-//= require ratyrate
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
@@ -44,6 +42,8 @@ $(function() {
     }
   });
 });
+
+
 
 
 

@@ -7,7 +7,7 @@
 					<%= form_for(@post, url: posts_path) do |f|%>
 					<!-- エラーメッセージ -->
 						<%= render partial: "layouts/error", locals: {post: @post} %>
-						
+
 						<div class="post-new-box col-xs-12">
 							<div class="img_field">
 								<span>no image</span>
@@ -42,7 +42,7 @@
 
 						</div>
 					<% end %>
-					<%= link_to "前に戻る", posts_path, class: "no-underline back-btn" %>
+					<%= link_to "前に戻る", :back, class: "no-underline back-btn" %>
 				</div>
 			</div>
 		</div>

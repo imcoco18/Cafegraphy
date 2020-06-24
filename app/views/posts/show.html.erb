@@ -28,6 +28,7 @@
 						<div class="post-body">
 		        	<h3 class="post-title"><%= @post.title %></h3>
 	        		<h5><span><i class="fas fa-store"></i> <%= @post.shop_name %></h5></span>
+	        		<!-- タグ -->
 	        		<div class="post-tags">
 		        		<% @post.tags.each do |tag| %>
 		        		  <span class="badge badge-info"><%= tag.name %></span>
@@ -48,6 +49,7 @@
           <%= render partial: 'post_comments/index', locals: { post: @post, post_comment: @post_comment } %>
         </div>
 			</section>
+
 		</div>
 	</div>
 </div>

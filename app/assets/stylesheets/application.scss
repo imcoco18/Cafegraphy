@@ -42,7 +42,7 @@ main {
 ul {
   list-style: none;
 }
-
+/* ---------------------------- */
 header {
 	height: 190px;
 	width: 100%;
@@ -52,8 +52,10 @@ header {
 
   	& .title {
   	 text-align: center;
-  	 font-size: 40px;
+  	 font-size: 50px;
   	 padding-top: 30px;
+     letter-spacing: 0.1em;
+     font-weight: bold;
   	 font-family: 'Apple Chancery','Chalkduster','Times New Roman','Noteworthy','Mv Boli',sans-serif;
   	}
 
@@ -74,7 +76,7 @@ header {
   	text-decoration: none !important;
   	}
 }
-
+/* ---------------------------- */
 footer {
 
 	width: 100%;
@@ -96,7 +98,7 @@ footer {
     	font-family: 'Chalkduster','Times New Roman','Noteworthy','Mv Boli',sans-serif;
   	}
 }
-
+/* ---------------------------- */
 .center-block {
   margin: 0 auto;
 }
@@ -285,8 +287,8 @@ footer {
 .actions {
   margin-bottom: 60px;
 }
-
-/*ページネーションデザイン*/
+/* ---------------------------- */
+/*ページネーション*/
 .pagination>li>a {
   border: none;
   color: #696969;
@@ -303,6 +305,8 @@ footer {
   border-radius: 20px;
   background-color: #AA8DC9;
 }
+/* ---------------------------- */
+/* page-top */
 #back {
   position: fixed;
   right: 20px;
@@ -310,4 +314,119 @@ footer {
 }
 #back img {
   width: 100px;
+}
+
+/* ---------------------------- */
+/* --- ハンバーガーアイコン --- */
+/* ---------------------------- */
+
+
+#hm-icon{
+  position: fixed;
+  left: 30px;
+  top: 30px;
+  z-index: 10;
+}
+
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+
+.menu-trigger {
+  position: relative;
+  width: 50px;
+  height: 44px;
+}
+
+.menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #9D5CE5;
+  border-radius: 4px;
+}
+
+.menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+
+.menu-trigger span:nth-of-type(2) {
+  top: 20px;
+}
+
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+
+.menu-trigger.active span:nth-of-type(1) {
+  -webkit-transform: translateY(20px) rotate(-45deg);
+  transform: translateY(20px) rotate(-45deg);
+  background-color: #fff;
+}
+
+.menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.menu-trigger.active span:nth-of-type(3) {
+  -webkit-transform: translateY(-20px) rotate(45deg);
+  transform: translateY(-20px) rotate(45deg);
+  background-color: #fff;
+}
+
+.menu-trigger.active span:hover {
+  background-color: #9D5CE5;
+}
+
+/* ------------------------ */
+/* ------ spメニュー ------ */
+/* ------------------------ */
+
+#sp-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #8177A5;
+  background-image: url(ham-cafe2.jpg);
+  background-attachment: fixed;
+  background-size:cover;
+  color: #fff;
+  width: 100%;
+  min-height: 100%;
+  display: none;
+  z-index: 9;
+  padding-top: 45px;
+}
+#sp-menu h2 {
+  text-align: center;
+  color: #2D89DF;
+  letter-spacing: 0.3em;
+  font-weight: bold;
+  font-size: 40px;
+  padding-bottom: 30px;
+}
+#sp-menu li {
+  text-align: center;
+  margin-bottom: 29px;
+  font-size: 22px;
+}
+
+#sp-menu span {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  transition: .3s;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+#sp-menu span:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  color: #2D89DF;
 }

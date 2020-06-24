@@ -70,9 +70,8 @@ gem 'ransack'
 gem 'pry-byebug'
 gem 'bootstrap', '~> 4.3.1'
 gem "jquery-rails"
-gem 'ratyrate'
 gem 'ancestry'
-
+gem 'rails-i18n'
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
