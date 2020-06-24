@@ -1,0 +1,13 @@
+<div class="form-group">
+	<span><i class="fas fa-tags"></i></span><%= f.label :user, "Tags" %>
+	<%= form_tag tags_index_posts_path, method: :get, class: 'search-tag_form' do %>
+	<%= select_tag :tag_id,
+	               options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
+	               {
+	                 prompt: 'タグで絞り込み検索',
+	                 class: 'form-control boards__select',
+	                 onchange: 'submit(this.form);'
+	               }
+	%>
+	<% end %>
+</div>

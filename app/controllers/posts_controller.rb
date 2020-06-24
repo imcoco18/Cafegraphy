@@ -26,7 +26,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post_comment = PostComment.new
     @post_comments = @post.post_comments.order(created_at: :desc)
-    
+
   end
 
   def edit
@@ -54,10 +54,14 @@ class PostsController < ApplicationController
     @results = @q.result(distinct: true).order("created_at DESC").page(params[:page]).per(5)
   end
 
+  def tags_index
+    @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all.order("created_at DESC").page(params[:page]).per(5)
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:post_image, :title, :shop_name, :category_id, :comment, tag_ids: [])
+    params.require(:post).permit(:post_image, :title, :shop_name, :comment, tag_ids: [])
   end
 
   def search_params

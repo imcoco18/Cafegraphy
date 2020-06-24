@@ -20,7 +20,7 @@
 
 
 // post new
-$(function() {
+$(document).on('turbolinks:load', function() {
     // 画像をアップしたら表示する
     // jQuery Upload Thumbs
     $('form input:file').uploadThumbs();
@@ -30,7 +30,7 @@ $(function() {
 });
 
 //comment validates
-$(function() {
+$(document).on('turbolinks:load', function() {
   if ( $("textarea").val().length == 0 ) {
     $('#submit').prop('disabled', true);
   }

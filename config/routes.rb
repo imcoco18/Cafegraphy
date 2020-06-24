@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :post_comments, only: [:create,:destroy]
       collection do
         get 'search' => 'posts#search'
+        get 'tags_index' => 'posts#tags_index'
       end
   end
 

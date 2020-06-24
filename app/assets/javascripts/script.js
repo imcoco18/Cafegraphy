@@ -1,5 +1,5 @@
 //page-top
-$(function() {
+$(document).on('turbolinks:load', function() {
   var pagetop = $('#back a');
   // ボタン非表示
   pagetop.hide();
@@ -17,21 +17,14 @@ $(function() {
      return false;
   });
 });
-//   $('#back a').on('click',function(){
-//     $('body, html').animate({
-//       scrollTop:0
-//     }, 800);
-//       return false;
-//   });
 
-// });
 //hamburger
-$(function() {
- 
+$(document).on('turbolinks:load', function() {
+
   $('.menu-trigger').on('click', function(event) {
     $(this).toggleClass('active');
     $('#sp-menu').fadeToggle();
     event.preventDefault();
   });
- 
+
  });
