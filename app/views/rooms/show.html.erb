@@ -13,17 +13,18 @@
         <!-- メッセージフォーム -->
         <div class="message-form">
           <%= form_with model: @message, url: messages_path, method: :post, remote: true, html: { class: "message-form"} do |f| %>
-
+          <%= render 'layouts/error', object: f.object %>
           <div class="input-message">
             <%= f.text_area :content, class: "content" %>
             <%= f.hidden_field :room_id, value: @room.id %>
           </div>
           <div class="actions">
-            <%= f.submit "送信", class: "submit float-right" %>
+            <%= f.submit "送信", id: 'submit', class: "submit float-right" %>
           </div>
           <% end %>
         </div>
       </section>
+      <%= link_to "前に戻る", 'javascript:history.back()', class: "no-underline back-btn" %>
     </div>
   </div>
 </div>

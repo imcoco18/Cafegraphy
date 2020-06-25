@@ -5,8 +5,7 @@
 				<div class="post-edit-form">
 					<h2 class="head-line">編集</h2>
 					<%= form_for(@post) do |f| %>
-					<!-- エラーメッセージ -->
-					<%= render partial: "layouts/error", locals: {post: @post} %>
+					<%= render 'layouts/error', object: f.object %>
 
 							<div id="item-image">
 					            <%= attachment_image_tag @post, :post_image, class: "img-square", fallback: "no_image.jpg", size:"200x200" %>

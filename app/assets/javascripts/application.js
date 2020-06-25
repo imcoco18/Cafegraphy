@@ -43,6 +43,20 @@ $(document).on('turbolinks:load', function() {
   });
 });
 
+//DM validates
+$(document).on('turbolinks:load', function() {
+  if ( $('#textarea').val().length == 0 ) {
+    $('#submit').attr('disabled', 'disabled');
+  }
+  $('#textarea').bind('keydown keyup keypress change', function() {
+    if ( $(this).val().length > 0 ) {
+      $('#submit').removeAttr('disabled');
+    } else {
+      $('#submit').attr('disabled', 'disabled');
+    }
+  });
+});
+
 
 
 

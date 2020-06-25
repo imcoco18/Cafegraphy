@@ -1,0 +1,31 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 ml-auto mr-auto ">
+			<section class="dm-room-index">
+				<h1>DMルーム履歴</h1>
+				<table class="table">
+					<thead>
+						<tr>
+							<th class="dm-room-th">DM Cafegrapher</th>
+							<th class="dm-room-th">message<span><i class="fas fa-paper-plane fa-fw"></i></span></th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @another_entries.each do |entry| %>
+						<tr>
+							<td>
+								<%= link_to entry.user.name, user_path(entry.user), class: "no-underline dm-room-user" %>
+							</td>
+							<td>
+								<%= link_to room_path(entry.room), class: "no-underline submit" do %>
+								DMを送る
+								<% end %>
+							</td>
+							<% end %>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</div>
+	</div>
+</div>

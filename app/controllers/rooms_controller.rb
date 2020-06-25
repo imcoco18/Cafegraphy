@@ -19,5 +19,15 @@ class RoomsController < ApplicationController
 	    end
 	end
 
+	def index
+		current_entries = current_user.entries
+	    my_room_ids = []
+	    current_entries.each do |entry|
+	      my_room_ids << entry.room.id
+	    end
+	    # さらにuser_idがログインユーザーでは無いレコードを抽出
+	    @another_entries = Entry.where(room_id: my_room_ids).where.not(user_id: current_user.id)
+	end
+
 
 end
