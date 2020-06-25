@@ -1,3 +1,4 @@
+<% provide(:title, "お問い合わせフォーム") %>
 <section class="inquiry-index">
 	<div class="container">
 		<div class="row">
@@ -33,12 +34,12 @@
 				    </tr>
 				    <tr>
 				    	<div class="form-group">
-					      <th>お問い合わせ内容</th>
+					      <th>お問い合わせ内容<span class="text-danger">（必須）</span></th>
 					      <td><%= f.text_area :message %></td>
 					  	</div>
 				    </tr>
 				  </table>
-				  <%= f.submit '確認', class: 'submit float-right' %>
+				  <%= f.submit '確認',id: 'submit', class: 'submit float-right' %>
 				<% end %>
 				<%= link_to "前に戻る", 'javascript:history.back()', class: "no-underline back-btn" %>
 			</div>

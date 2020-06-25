@@ -1,3 +1,4 @@
+<% provide(:title, "ユーザー編集") %>
 <section class="user-edit">
 	<div class="container">
 		<div class="row">
@@ -9,7 +10,7 @@
 							<div class="edit-profile-img">
 								<%= attachment_image_tag @user, :profile_image, size: "100x100", class: "rounded-circle", fallback: "Cafegraphy.jpg"%>
 								<span><<現在のイメージ画像</span>
-								
+
 								<%= f.attachment_field :profile_image, class: "user_image" %>
 							</div>
 							<div class="edit-name">

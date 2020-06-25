@@ -58,6 +58,20 @@ $(document).on('turbolinks:load', function() {
 });
 
 
+//お問い合わせ validates
+$(document).on('turbolinks:load', function() {
+  if ( $('#textfield', '#textarea').val().length == 0 ) {
+    $('#submit').attr('disabled', 'disabled');
+  }
+  $('#textfield', '#textarea').bind('keydown keyup keypress change', function() {
+    if ( $(this).val().length > 0 ) {
+      $('#submit').removeAttr('disabled');
+    } else {
+      $('#submit').attr('disabled', 'disabled');
+    }
+  });
+});
+
 
 
 
