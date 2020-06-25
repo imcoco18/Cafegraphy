@@ -24,6 +24,25 @@
 					  <p><%= @user.introduction %></p>
 				    </div>
 				</div>
+				<div class="col-xs-3">
+					<% if @user.id == current_user.id %>
+
+					<% else %>
+					  <% if @isRoom == true %>
+						  <div class="already-has-chatting">
+						    <p><%= button_to "DMを送る", room_path(@roomId), method: :get, class: "submit restart-chat-button" %>
+						    </p>
+						  </div>
+					  <% else %>
+					     <%= form_for @room do |f| %>
+					      <%= fields_for @entry do |e| %>
+					        <%= e.hidden_field :user_id, :value=> @user.id %>
+					      <% end %>
+					      <%= f.submit "DMを送る", class: "submit" %>
+					    <% end %>
+					  <% end %>
+					<% end %>
+				</div>
 
 				<hr>
 

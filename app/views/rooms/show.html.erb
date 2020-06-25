@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 ml-auto mr-auto">
+
+      <section class="message-show">
+          <h1><span><i class="far fa-comments fa-2x"></i></span></h1>
+        <hr>
+
+        <div id='message_index'>
+          <%= render 'messages/message', messages: @messages %>
+        </div>
+
+        <!-- メッセージフォーム -->
+        <div class="message-form">
+          <%= form_with model: @message, url: messages_path, method: :post, remote: true, html: { class: "message-form"} do |f| %>
+
+          <div class="input-message">
+            <%= f.text_area :content, class: "content" %>
+            <%= f.hidden_field :room_id, value: @room.id %>
+          </div>
+          <div class="actions">
+            <%= f.submit "送信", class: "submit float-right" %>
+          </div>
+          <% end %>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+

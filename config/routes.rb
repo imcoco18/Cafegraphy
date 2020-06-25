@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   resources :categories,only: [:index,:edit,:update]
   resources :relationships, only: [:create,:destroy,:index,:show]
+  resources :messages, only: [:create]
+  resources :rooms, only: [:create,:show,:index]
 
   root 'homes#home'
   get 'about' => 'homes#about'

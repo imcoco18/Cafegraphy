@@ -9,6 +9,10 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :post_comments, dependent: :destroy
 
+ #DM機能
+  has_many :messages, dependent: :destroy
+  has_many :entries, dependent: :destroy
+
  #いいね機能
   has_many :likes, dependent: :destroy
    #ユーザーがどの投稿にいいねをしているのか簡単に取得できるようにするため
