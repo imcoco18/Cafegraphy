@@ -8,22 +8,28 @@
 					<div class="post-image">
 	          <%= attachment_image_tag @post, :post_image, size: "480x480" %>
 	        </div>
-	        <div class="post-content">
-	        	<div class="post-icons clearfix">
-					<!-- いいね機能 -->
-		        	<div class="float-left" id="likes_buttons_<%= @post.id %>">
-								<%= render partial: 'likes/like', locals: {post: @post} %>
+
+      		<div class="post-content">
+      			<% if @post.user == current_user %>
+		        	<div class="post-icons clearfix">
+			        	<div class="float-left" id="likes_buttons_<%= @post.id %>">
+									<%= render partial: 'likes/like', locals: {post: @post} %>
+								</div>
+			        		 <%= link_to edit_post_path(@post), class: "no-underline" do %>
+			        		  	<span class="post-edit"><i class="fas fa-edit"></i></span>
+			        		 <% end %>
+				           <%= link_to post_path(@post), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"} do %>
+				              <span class="post-delete"><i class="fas fa-trash-alt"></i></span>
+				           <% end %>
+				      </div>
+			    	<% else %>
+				    	<div class="post-icons clearfix">
+			        	<div class="float-left heart-user" id="likes_buttons_<%= @post.id %>">
+									<%= render partial: 'likes/like', locals: {post: @post} %>
+								</div>
 							</div>
-					<!-- 編集・削除アイコン -->
-		        		<% if @post.user == current_user %>
-		        		  <%= link_to edit_post_path(@post), class: "no-underline" do %>
-		        		  	<span class="post-edit"><i class="fas fa-edit"></i></span>
-		        		  <% end %>
-			              <%= link_to post_path(@post), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"} do %>
-			                <span class="post-delete"><i class="fas fa-trash-alt"></i></span>
-			              <% end %>
-			          	<% end %>
-						</div>
+			    	<% end %>
+
 
 						<div class="post-body">
 		        	<h3 class="post-title"><%= @post.title %></h3>
@@ -35,7 +41,9 @@
 		        		<% end %>
 		        	</div>
 	        	</div>
+
 	        	<%= render 'layouts/share' %>
+
 						<div class="post-user float-right">
 							<span class="post-date"><%= @post.created_at.strftime('%Y/%m/%d') %></span>
 							<%= link_to user_path(@post.user.id), class: "no-underline" do %>
