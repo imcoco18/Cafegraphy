@@ -10,7 +10,7 @@
 	padding: 10px;
 	margin: 20px;
 	border-radius: 10px;
-	margin-left: 110px; 
+	margin-left: 120px; 
 	box-shadow: 0px 0px 10px 0px #a7a7a7;
 	}
 	& .message-area-box::before {
@@ -27,7 +27,7 @@
 	}
 	& .message-area-box > .message-icon {
   position: absolute;
-  left: -110px;
+  left: -120px;
   top: 0;
 	}
 
@@ -38,7 +38,7 @@
 	padding: 10px;
 	margin: 20px;
 	border-radius: 10px;
-	margin-right: 110px;
+	margin-right: 120px;
 	box-shadow: 0px 0px 10px 0px #a7a7a7;
 	}
 	& .message-area-box-user::before {
@@ -55,7 +55,7 @@
 	}
 	& .message-area-box-user > .message-icon {
 	position: absolute;
-  right: -110px;
+  right: -120px;
   top: 0;
 	}
 

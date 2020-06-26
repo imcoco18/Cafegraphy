@@ -6,6 +6,7 @@
 				<h2>プロフィール編集</h2>
 				<div class="user-edit-box">
 					<%= form_for(@user) do |f| %>
+					<%= render 'layouts/error', object: f.object %>
 						<div class="form-group">
 							<div class="edit-profile-img">
 								<%= attachment_image_tag @user, :profile_image, size: "100x100", class: "rounded-circle", fallback: "Cafegraphy.jpg"%>

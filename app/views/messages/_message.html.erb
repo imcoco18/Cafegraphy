@@ -9,7 +9,7 @@
             <div class="message-icon">
               <%= attachment_image_tag m.user, :profile_image, fallback: "Cafegraphy.jpg", class:"profile-img-circle", size: "40x40" %>
               <p><%= m.user.name %></p>
-                <%= time_ago_in_words(m.created_at) %>前
+              <p class="time"><%= shape_create_time(m.created_at) %></p>
             </div>
             <p><strong><%= m.content %></strong></p>
             <br>
@@ -19,7 +19,7 @@
             <div class="message-icon">
               <%= attachment_image_tag m.user, :profile_image, fallback: "Cafegraphy.jpg", class:"profile-img-circle", size: "40x40" %>
               <p><%= m.user.name %></p>
-                <%= time_ago_in_words(m.created_at) %>前
+              <p class="time"><%= shape_create_time(m.created_at) %></p>
             </div>
             <p><strong><%= m.content %></strong></p>
             <br>

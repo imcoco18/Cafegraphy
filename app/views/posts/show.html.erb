@@ -1,10 +1,9 @@
 <% provide(:title, "投稿詳細") %>
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12  ml-auto mr-auto">
+		<div class="col-xs-11  ml-auto mr-auto">
 			<section class="post-show">
 				<span class="box-title">Cafegraphy</span>
-
 				<div class="post-item">
 					<div class="post-image">
 	          <%= attachment_image_tag @post, :post_image, size: "480x480" %>
@@ -36,6 +35,7 @@
 		        		<% end %>
 		        	</div>
 	        	</div>
+	        	<%= render 'layouts/share' %>
 						<div class="post-user float-right">
 							<span class="post-date"><%= @post.created_at.strftime('%Y/%m/%d') %></span>
 							<%= link_to user_path(@post.user.id), class: "no-underline" do %>

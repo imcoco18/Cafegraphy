@@ -99,6 +99,23 @@ footer {
   	}
 }
 /* ---------------------------- */
+
+.link-share {
+  padding: 10px 15px 0 0;
+  position: relative;
+  margin: 2em 0;
+
+
+  & .link-share-title {
+  position: absolute;
+  display: inline-block;
+  top: -10px;
+  font-size: 6px;
+  color: #95ccff;
+  font-weight: bold;
+  }
+}
+
 .center-block {
   margin: 0 auto;
 }
@@ -126,9 +143,7 @@ footer {
 }
 .form {
   text-align: center!important;
-  -webkit-animation: bounce 1.5s infinite;
-  -moz-animation: bounce 1.5s infinite;
-  animation: bounce 1.5s infinite;
+ 
 }
 .shadow{
   box-shadow: 0px 0px 20px 5px #AAA;
@@ -146,9 +161,7 @@ footer {
   border-radius: 5px;
   border: none;
   width: 50%;
-  -webkit-transition: all 0.5s ease 0s;
-  -moz-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
+
 }
 .name {
   background-color: #7239C1;

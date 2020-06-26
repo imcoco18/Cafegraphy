@@ -5,7 +5,7 @@
     <h2>ログイン</h2>
     <hr>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= render 'layouts/error', object: f.object %>
       <div class="field form form-group">
 
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "email field-in font", placeholder: "Email" %>
@@ -19,7 +19,14 @@
       <div class="actions">
         <%= f.submit "Log in", class: "submit font form" %>
       </div>
-      <br>
+
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end -%>
 
     <% end %>
     </div>
