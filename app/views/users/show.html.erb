@@ -15,9 +15,11 @@
 					<% end %>
 					<div class="mypage-profile-name">
 					  <h3><%= @user.name %></h3>
+					  <!-- フォロー・フォロワー一覧 -->
 					  <div class="follow-stats">
 					    <%= render 'relationships/follow_stats', user: @user %>
 					  </div>
+					  <!-- フォローボタン -->
 					  <div class="follow-button" id="follow-button_<%= @user.id %>">
 					    <%= render 'relationships/follow_button', user: @user %>
 					  </div>
@@ -25,6 +27,7 @@
 					  <p><%= @user.introduction %></p>
 				    </div>
 				</div>
+				<!-- DMボタン -->
 				<div class="col-xs-3 user-show-dm">
 					<% if @user.id == current_user.id %>
 
@@ -46,7 +49,7 @@
 				</div>
 
 				<hr>
-
+				<!-- 投稿一覧 -->
 				<div class="mypage-index ml-auto mr-auto">
 					<% @posts.each do |post| %>
 					<div class="box-image">

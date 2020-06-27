@@ -6,30 +6,120 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# user
+User.create!(
+  name: "まりお",
+  email: "test1@test.com",
+  password: "111111",
+  profile_image: File.open("./app/assets/images/user9.png"),
+  introduction: "ぴーちとカフェいきたい"
+)
+User.create!(
+  name: "るいじ",
+  email: "test2@test.com",
+  password: "111111",
+  profile_image: File.open("./app/assets/images/user10.png"),
+  introduction: "おばけとカフェいきたい"
+)
+User.create!(
+  name: "ぴーち",
+  email: "test3@test.com",
+  password: "111111",
+  profile_image: File.open("./app/assets/images/user2.png"),
+  introduction: "みんな大好き！カフェいきたい"
+)
+User.create!(
+  name: "くっぱ",
+  email: "test4@test.com",
+  password: "111111",
+  profile_image: File.open("./app/assets/images/user4.png"),
+  introduction: "まりおとカフェいきたい"
+)
+User.create!(
+  name: "きのぴおときのぴこ",
+  email: "test5@test.com",
+  password: "111111",
+  profile_image: File.open("./app/assets/images/user8.png"),
+  introduction: "くりぼーも連れてカフェいきたい"
+)
+User.create!(
+  name: "どんきーこんぐでぃでぃーこんぐ",
+  email: "test6@test.com",
+  password: "111111",
+  profile_image: File.open("./app/assets/images/user5.png"),
+  introduction: "バナナカフェいきたい"
+)
 
-10.times do |n|
-	User.create!(
-	  name: "カモノハシ#{n + 1}",
-	  email: "test#{n + 1}@test.com",
-	  password: "111111",
-	  profile_image: File.open("./app/assets/images/user#{n + 1}.png"),
-	  introduction: "ご飯食べたいカフェいきたい"
-	)
+# post
+Post.create!(
+  user_id: 1,
+  post_image: File.open("./app/assets/images/cafe1.jpg"),
+  title: "ベリーケーキ",
+  shop_name: "pukupuku coffee shop",
+)
+2.times do |n|
+Post.create!(
+  user_id: 2,
+  post_image: File.open("./app/assets/images/cafe#{n + 2}.jpg"),
+  title: "good good coffee",
+  shop_name: "teresa coffee",
+)
 end
-User.all.each do |user|
-  10.times do |n|
-     user.posts.create!(
-    	post_image: File.open("./app/assets/images/cafe#{n + 1}.jpg"),
-      title: "good coffee#{n + 1}",
-      shop_name: "coffee shop#{n + 1}",
-    )
-  end
+3.times do |n|
+Post.create!(
+  user_id: 3,
+  post_image: File.open("./app/assets/images/cafe#{n + 4}.jpg"),
+  title: "luv cafe",
+  shop_name: "kinoco coffee shop",
+)
+end
+2.times do |n|
+  Post.create!(
+    user_id: 4,
+    post_image: File.open("./app/assets/images/cafe#{n + 7}.jpg"),
+    title: "nice coffee",
+    shop_name: "oriental tea shop",
+  )
+end
+2.times do |n|
+  Post.create!(
+    user_id: 5,
+    post_image: File.open("./app/assets/images/cafe#{n + 9}.jpg"),
+    title: "good coffee time",
+    shop_name: "nikopico coffee shop",
+  )
+end
+Post.create!(
+  user_id: 6,
+  post_image: File.open("./app/assets/images/cafe11.jpg"),
+  title: "tea gooood!!!!",
+  shop_name: "oriental tea shop",
+)
+
+# like
+5.times do |n|
+  Like.create!(
+    user_id: n + 1,
+    post_id: n + 1
+  )
 end
 
 
+# relationship
+2.times do |n|
+  Relationship.create!(
+    user_id: n + 3,
+    follow_id: n + 2
+  )
+end
+2.times do |n|
+  Relationship.create!(
+    user_id: n + 1,
+    follow_id: n + 2
+  )
+end
 
-
-
+# tag name
 Tag.create!([
   { name: 'WiFiあり' },
   { name: '電源あり' },
@@ -45,6 +135,20 @@ Tag.create!([
   { name: 'クレジットカードOK' },
   { name: '電子マネーOK' }
 ])
+
+# tag
+3.times do |n|
+  PostTag.create!(
+    post_id: n + 2,
+    tag_id: n + 2
+  )
+end
+4.times do |n|
+  PostTag.create!(
+    post_id: n + 3,
+    tag_id: n + 3
+  )
+end
 
 
 #エリアカテゴリー実装した場合

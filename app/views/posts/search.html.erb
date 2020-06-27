@@ -7,7 +7,7 @@
 				<!--キーワード検索-->
 
 				<div class="search-keyword_shop_name">
-					<!--Ransackを使うとsearch_form_forを使える-->
+					<!--Ransackでsearch_form_for使用-->
 					<%= search_form_for @q, url: search_posts_path do |f| %>
 					<!-- Cafe検索 -->
 					<div class="form-group">
@@ -64,7 +64,7 @@
 								<% end %>
 								<div class="text-center"><%= paginate @results %></div>
 							</section>
-							
+
         	</div>
 			</div>
 		</div>

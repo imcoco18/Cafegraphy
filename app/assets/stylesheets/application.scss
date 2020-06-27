@@ -29,7 +29,7 @@
 }
 
 body {
-  display: flex; //フレックスボックスに有効に
+  display: flex;
   flex-flow: column; //要素を縦に並べる
   min-height: 100vh; //最小でも画面の高さ分のbodyの高さを担保する
 	font-family: 'American Typewriter','Athelas','TsukuARdGothic-Regular','Chalkduster','Times New Roman','Noteworthy','Mv Boli',sans-serif;
@@ -143,7 +143,7 @@ footer {
 }
 .form {
   text-align: center!important;
- 
+
 }
 .shadow{
   box-shadow: 0px 0px 20px 5px #AAA;
@@ -404,9 +404,9 @@ footer {
   top: 0;
   left: 0;
   background: #8177A5;
-  background-image: url(ham-cafe2.jpg);
+  background-image: image-url(ham-cafe2.jpg);
   background-attachment: fixed;
-  background-size:cover;
+  background-size: cover;
   color: #fff;
   width: 100%;
   min-height: 100%;

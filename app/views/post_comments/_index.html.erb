@@ -4,7 +4,7 @@
 		<span><i class="fa fa-comment"></i>
 			<%= post.post_comments.count %></span>
 	</p>
-	
+
 	<% post.post_comments.each do |c| %>
 		<div class="comment-index">
 		  <div class="comment-date">
@@ -31,6 +31,7 @@
 	  <hr>
   <% end %>
 </div>
+<!-- コメントフォーム -->
 <div class="comment-form">
 	<%= render partial: 'post_comments/form', locals: { post: post, post_comment: post_comment } %>
 </div>
