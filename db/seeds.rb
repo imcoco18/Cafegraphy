@@ -51,73 +51,93 @@ User.create!(
 )
 
 # post
-Post.create!(
-  user_id: 1,
-  post_image: File.open("./app/assets/images/cafe1.jpg"),
-  title: "ベリーケーキ",
-  shop_name: "pukupuku coffee shop",
-)
-2.times do |n|
-Post.create!(
-  user_id: 2,
-  post_image: File.open("./app/assets/images/cafe#{n + 2}.jpg"),
-  title: "good good coffee",
-  shop_name: "teresa coffee",
-)
+User.all.each do |user|
+  6.times do |n|
+    user.posts.create!(
+      post_image: File.open("./app/assets/images/cafe#{n + 1}.jpg"),
+      title: "good coffee",
+      shop_name: "pukupuku coffee shop",
+    )
+  end
+
+  2.times do |n|
+    user.posts.create!(
+      post_image: File.open("./app/assets/images/cafe#{n + 7}.jpg"),
+      title: "good tea time",
+      shop_name: "teresa coffee",
+    )
+  end
+
+  4.times do |n|
+    user.likes.create!(
+      post_id: n + 2
+    )
+  end
+
+  4.times do |n|
+    user.relationships.create!(
+      follow_id: n + 1
+    )
+  end
 end
-3.times do |n|
-Post.create!(
-  user_id: 3,
-  post_image: File.open("./app/assets/images/cafe#{n + 4}.jpg"),
-  title: "luv cafe",
-  shop_name: "kinoco coffee shop",
-)
-end
-2.times do |n|
-  Post.create!(
-    user_id: 4,
-    post_image: File.open("./app/assets/images/cafe#{n + 7}.jpg"),
-    title: "nice coffee",
-    shop_name: "oriental tea shop",
-  )
-end
-2.times do |n|
-  Post.create!(
-    user_id: 5,
-    post_image: File.open("./app/assets/images/cafe#{n + 9}.jpg"),
-    title: "good coffee time",
-    shop_name: "nikopico coffee shop",
-  )
-end
-Post.create!(
-  user_id: 6,
-  post_image: File.open("./app/assets/images/cafe11.jpg"),
-  title: "tea gooood!!!!",
-  shop_name: "oriental tea shop",
-)
+
+
+# 2.times do |n|
+# Post.create!(
+#   post_image: File.open("./app/assets/images/cafe#{n + 2}.jpg"),
+#   title: "good good coffee",
+#   shop_name: "teresa coffee",
+# )
+# end
+# 3.times do |n|
+# Post.create!(
+#   post_image: File.open("./app/assets/images/cafe#{n + 4}.jpg"),
+#   title: "luv cafe",
+#   shop_name: "kinoco coffee shop",
+# )
+# end
+# 2.times do |n|
+#   Post.create!(
+#     post_image: File.open("./app/assets/images/cafe#{n + 7}.jpg"),
+#     title: "nice coffee",
+#     shop_name: "oriental tea shop",
+#   )
+# end
+# 2.times do |n|
+#   Post.create!(
+#     post_image: File.open("./app/assets/images/cafe#{n + 9}.jpg"),
+#     title: "good coffee time",
+#     shop_name: "nikopico coffee shop",
+#   )
+# end
+# Post.create!(
+#   post_image: File.open("./app/assets/images/cafe11.jpg"),
+#   title: "tea gooood!!!!",
+#   shop_name: "oriental tea shop",
+# )
 
 # like
-5.times do |n|
-  Like.create!(
-    user_id: n + 1,
-    post_id: n + 1
-  )
-end
+# 5.times do |n|
+#   Like.create!(
+#     user_id: n + 1,
+#     post_id: n + 1
+#   )
+# end
 
 
 # relationship
-2.times do |n|
-  Relationship.create!(
-    user_id: n + 3,
-    follow_id: n + 2
-  )
-end
-2.times do |n|
-  Relationship.create!(
-    user_id: n + 1,
-    follow_id: n + 2
-  )
-end
+# 2.times do |n|
+#   Relationship.create!(
+#     user_id: n + 3,
+#     follow_id: n + 2
+#   )
+# end
+# 2.times do |n|
+#   Relationship.create!(
+#     user_id: n + 1,
+#     follow_id: n + 2
+#   )
+# end
 
 # tag name
 Tag.create!([
@@ -137,18 +157,18 @@ Tag.create!([
 ])
 
 # tag
-3.times do |n|
-  PostTag.create!(
-    post_id: n + 2,
-    tag_id: n + 2
-  )
-end
-4.times do |n|
-  PostTag.create!(
-    post_id: n + 3,
-    tag_id: n + 3
-  )
-end
+# 3.times do |n|
+#   PostTag.create!(
+#     post_id: n + 2,
+#     tag_id: n + 2
+#   )
+# end
+# 4.times do |n|
+#   PostTag.create!(
+#     post_id: n + 3,
+#     tag_id: n + 3
+#   )
+# end
 
 
 #エリアカテゴリー実装した場合
