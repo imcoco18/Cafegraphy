@@ -234,6 +234,8 @@
 .search-index{
     
     & .search-keyword_shop_name {
+    margin: 0 auto;
+    width: 50%;
     padding: 10px 20px;
     transition: .3s;
     -webkit-transform: scale(1);
@@ -267,6 +269,45 @@
     & .boards__select {
       display: inline-block;
       width: auto;
+    }
+
+    & #tab-menu li {
+      float: left;
+      list-style-type: none;
+      width: 25%;
+    }
+
+    & #tab-menu a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      padding: 20px;
+      text-align: center;
+      background: #99CBE8;
+
+
+    }
+
+    & #tab-menu .active {
+      background: #EFEDED;
+      color: #000;
+      font-weight: bold;
+    }
+
+    & #tab-menu a:hover {
+      background: #8EDDF9;
+
+    }
+
+    & #tab-contents .tab {
+      padding: 30px;
+
+
+    }
+
+    & #tab-contents p{
+      color:#000;
+      line-height: 2.5;
     }
 
 }

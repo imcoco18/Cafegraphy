@@ -4,68 +4,82 @@
 		<div class="row">
 			<div class="col-xs-12 ml-auto mr-auto">
 
-				<!--キーワード検索-->
+				<div class="wrap">
+			    <ul id="tab-menu" class="clearfix">
+			      <li><a href="#tab1" class="active">キーワード</a></li>
+			      <li><a href="#tab2" class="">タグ</a></li>
+			    </ul>
 
-				<div class="search-keyword_shop_name">
-					<!--Ransackでsearch_form_for使用-->
-					<%= search_form_for @q, url: search_posts_path do |f| %>
-					<!-- Cafe検索 -->
-					<div class="form-group">
-	          <span><i class="fas fa-store"></i></span><%= f.label :title_or_shop_name, "Cafe" %>
-	          <%= f.search_field :title_or_shop_name_cont, class: 'form-control', placeholder: 'キーワードでCafe検索' %>
-	        </div>
-	        <!-- ユーザー検索 -->
-	        <div class="form-group">
-	          <span><i class="fas fa-users"></i></span><%= f.label :user_name, "Cafegrapher" %>
-  					<%= f.text_field :user_name_cont, class: 'form-control', placeholder: 'キーワードでユーザー検索' %>
-  				</div>
+				  <div id="tab-contents" class="clearfix">
+	      		<div id="tab1" class="tab">
+							<!--キーワード検索-->
+							<div class="search-keyword_shop_name">
+								<!--Ransackでsearch_form_for使用-->
+								<%= search_form_for @q, url: search_posts_path do |f| %>
+								<!-- Cafe検索 -->
+								<div class="form-group">
+				          <span><i class="fas fa-store"></i></span><%= f.label :title_or_shop_name, "Cafe" %>
+				          <%= f.search_field :title_or_shop_name_cont, class: 'form-control', placeholder: 'キーワードでCafe検索' %>
+				        </div>
+				        <!-- ユーザー検索 -->
+				        <div class="form-group">
+				          <span><i class="fas fa-users"></i></span><%= f.label :user_name, "Cafegrapher" %>
+			  					<%= f.text_field :user_name_cont, class: 'form-control', placeholder: 'キーワードでユーザー検索' %>
+			  				</div>
 
-	          <%= f.submit 'Search', class: "new-btn" %>
-	        </div>
-	        <% end %>
-	      </div>
-	      <%= render "layouts/pagetop" %>
+				          <%= f.submit 'Search', id: 'submit', class: "new-btn" %>
+				        <% end %>
+				      </div>
+				      
 
-        <!--キーワード検索の結果を表示-->
+			        <!--キーワード検索の結果を表示-->
 
-	            <section class="post-index">
-								<% @results.each do |result| %>
-								<div class="post-index-box">
-									<div class="view view-first">
-	                	<%= link_to post_path(result.id) do %>
-	                		<%= attachment_image_tag(result, :post_image, size: "480x480") %>
-	                	<% end %>
-	              	</div>
-				        	<div class="float-left" id="likes_buttons_<%= result.id %>">
-										<%= render partial: 'likes/like', locals: {post: result} %>
+				            <section class="post-index">
+											<% @results.each do |result| %>
+											<div class="post-index-box">
+												<div class="view view-first">
+				                	<%= link_to post_path(result.id) do %>
+				                		<%= attachment_image_tag(result, :post_image, size: "480x480") %>
+				                	<% end %>
+				              	</div>
+							        	<div class="float-left" id="likes_buttons_<%= result.id %>">
+													<%= render partial: 'likes/like', locals: {post: result} %>
+												</div>
+				              	<div class="comment-count">
+													<span><i class="fa fa-comment"></i></span>
+													<%= result.post_comments.count %>
+												</div>
+												<div class="post-body">
+													<h3 class="post-title"><%= result.title %></h3>
+				        					<h5><span><i class="fas fa-store"></i> <%= result.shop_name %></h5>
+												</div>
+												<div class="post-tags">
+							        		<% result.tags.each do |tag| %>
+							        		  <span class="badge badge-info"><%= tag.name %></span>
+							        		<% end %>
+							        	</div>
+												<div class="post-user float-right">
+												<%= link_to user_path(result.user.id) do %>
+													<%= attachment_image_tag result.user, :profile_image, size: "40x40" ,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
+												<% end %>
+												<%= link_to user_path(result.user.id), class: "no-underline" do %>
+												  <%= result.user.name %>
+												<% end %>
+												</div>
+											</div>
+											<% end %>
+											<div class="text-center"><%= paginate @results %></div>
+										</section>
 									</div>
-	              	<div class="comment-count">
-										<span><i class="fa fa-comment"></i></span>
-										<%= result.post_comments.count %>
-									</div>
-									<div class="post-body">
-										<h3 class="post-title"><%= result.title %></h3>
-	        					<h5><span><i class="fas fa-store"></i> <%= result.shop_name %></h5>
-									</div>
-									<div class="post-tags">
-				        		<% result.tags.each do |tag| %>
-				        		  <span class="badge badge-info"><%= tag.name %></span>
-				        		<% end %>
-				        	</div>
-									<div class="post-user float-right">
-									<%= link_to user_path(result.user.id) do %>
-										<%= attachment_image_tag result.user, :profile_image, size: "40x40" ,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
-									<% end %>
-									<%= link_to user_path(result.user.id), class: "no-underline" do %>
-									  <%= result.user.name %>
-									<% end %>
-									</div>
+
+								<div id="tab2" class="tab">
+									tags
 								</div>
-								<% end %>
-								<div class="text-center"><%= paginate @results %></div>
-							</section>
+
+							</div>
 
         	</div>
+
 			</div>
 		</div>
 	</div>
