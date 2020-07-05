@@ -52,6 +52,7 @@ class PostsController < ApplicationController
     #キーワード
     @q = Post.ransack(params[:q])
     @results = @q.result(distinct: true).order("created_at DESC").page(params[:page]).per(5)
+    @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all.order("created_at DESC").page(params[:page]).per(5)
   end
 
   def tags_index

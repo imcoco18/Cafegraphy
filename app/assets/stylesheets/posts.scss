@@ -283,17 +283,28 @@
       display: block;
       padding: 20px;
       text-align: center;
-      background: #99CBE8;
-
+      background: #EFEDED;
+      position: relative;
 
     }
 
     & #tab-menu .active {
-      background: #EFEDED;
+      background: #99CBE8;
       color: #000;
       font-weight: bold;
     }
 
+    & #tab-menu .active::after {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin: 0 0 0 -20px;
+    border: 20px solid transparent;
+    border-top-color: #99CBE8;
+    content: '';
+    }
     & #tab-menu a:hover {
       background: #8EDDF9;
 
