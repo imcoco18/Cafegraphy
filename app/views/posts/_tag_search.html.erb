@@ -1,13 +1,54 @@
-<div class="form-group">
-	<span><i class="fas fa-tags"></i></span><%= f.label :user, "Tags" %>
-	<%= form_tag tags_index_posts_path, method: :get, class: 'search-tag_form' do %>
-	<%= select_tag :tag_id,
-	               options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
-	               {
-	                 prompt: 'タグで絞り込み検索',
-	                 class: 'form-control boards__select',
-	                 onchange: 'submit(this.form);'
-	               }
-	%>
-	<% end %>
-</div>
+<div id="tab2" class="tab">
+									<section class="post-index">
+									<div class="form-group">
+										<%= search_form_for @result, url: search_posts_path do |f| %>
+										<span><i class="fas fa-tags"></i></span><%= f.label :user, "Tags" %>
+										<%= form_tag tags_index_posts_path, method: :get, class: 'search-tag_form' do %>
+										<%= select_tag :tag_id,
+										               options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
+										               {
+										                 prompt: 'タグで絞り込み検索',
+										                 class: 'form-control boards__select',
+										                 onchange: 'submit(this.form);'
+										               }
+										%>
+										<% end %>
+										<% end %>
+									</div>
+
+									<% @posts.each do |tag| %>
+								  <div class="post-index-box">
+									<div class="view view-first">
+	                	<%= link_to post_path(tag.id) do %>
+	                		<%= attachment_image_tag(tag, :post_image, size: "480x480") %>
+	                	<% end %>
+	              	</div>
+				        	<div class="float-left" id="likes_buttons_<%= tag.id %>">
+										<%= render partial: 'likes/like', locals: {post: tag} %>
+									</div>
+	              	<div class="comment-count">
+										<span><i class="fa fa-comment"></i></span>
+										<%= tag.post_comments.count %>
+									</div>
+									<div class="post-body">
+										<h3 class="post-title"><%= tag.title %></h3>
+	        					<h5><span><i class="fas fa-store"></i> <%= tag.shop_name %></h5>
+									</div>
+									<div class="post-tags">
+				        		<% tag.tags.each do |tag| %>
+				        		  <span class="badge badge-info"><%= tag.name %></span>
+				        		<% end %>
+				        	</div>
+									<div class="post-user float-right">
+									<%= link_to user_path(tag.user.id) do %>
+										<%= attachment_image_tag tag.user, :profile_image, size: "40x40" ,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
+									<% end %>
+									<%= link_to user_path(tag.user.id), class: "no-underline" do %>
+									  <%= tag.user.name %>
+									<% end %>
+									</div>
+								</div>
+								<% end %>
+
+							</section>
+								</div>
