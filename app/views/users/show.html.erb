@@ -9,8 +9,9 @@
 					<% if @user == current_user %>
 					<span class="edit-link">
 						<%= link_to edit_user_path(@user) do %>
-						 <i class="fas fa-cog fa-lg"></i>
+						 <span class="icon-hover"><i class="fas fa-cog fa-lg"></i></span>
 						<% end %>
+						<p class="user_edit_link_tag"><%= @user.name %>さんの情報編集へ</p>
 					</span>
 					<% end %>
 					<div class="mypage-profile-name">

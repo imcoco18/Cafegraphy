@@ -72,4 +72,13 @@ $(document).on('turbolinks:load', function() {
   });
 });
 
+$(document).on('turbolinks:load', function() {
+  $('.icon-hover').hover(
+    function() {
+      $(this).find('.user_edit_link_tag').addClass('user_edit_link_tag_active');
+    },
+    function() {
+      $(this).find('.user_edit_link_tag').removeClass('user_edit_link_tag_active');
+  });
+});
 

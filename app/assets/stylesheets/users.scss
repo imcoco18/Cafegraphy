@@ -70,8 +70,15 @@
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
   border-bottom: solid 3px #5e7fca;
   }
+
 }
 
+.user_edit_link_tag {
+  display: none;
+}
+.user_edit_link_tag_active {
+  display: block;
+}
 .user-show-dm {
 
   & .submit {
