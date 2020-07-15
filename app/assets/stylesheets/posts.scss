@@ -154,10 +154,10 @@
 .post-new {
 
     & .post-new-form {
-    width: 650px;
+    width: 100%;
     }
     & .new-btn {
-    width: 100%;
+    width: 40%;
     background: #AA8DC9;
     border-radius: 5px;
     font-size: 18px;
@@ -177,17 +177,24 @@
     cursor: pointer;
     }
     & .img_field {
-      width: 250px;
-      height: 250px;
+      width: 450px;
+      height: 450px;
       text-align: center;
       background-image: image-url("logo1.jpg");
       background-size: contain;
+      display: inline-block;
     }
     form img.thumb {
         margin: 0 5px 5px 0;
-        max-width: 250px;
-        height: 250px;
+        max-width: 400px;
+        height: 400px;
         vertical-align: bottom;
+    }
+    & form {
+    margin-bottom: 50px;
+    }
+    & .post_form_box {
+    margin-top: 100px;
     }
 
 }
@@ -324,6 +331,16 @@
 }
 
 
+/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
+@media screen and (max-width:768px) {  
+ 
+}
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width:425px) {  
+  .post-new-form {
+  width: 100%;
+  }
+}
 
 
 

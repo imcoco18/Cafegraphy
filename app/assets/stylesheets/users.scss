@@ -93,7 +93,13 @@
 	& .box-image {
 	margin: 24px;
   box-shadow: 0 0 12px rgba(0,0,0,.9);
+ 
 	}
+  & img {
+  width: 230px;
+  height: 230px;
+  }
+
 }
 .follow-index {
   & .follow-index-title {
@@ -292,6 +298,74 @@
   }
 }
 
+@media screen and (max-width:425px) {
+  .box-index img {
+  width: 120px;
+  height: 120px;
+  margin: 10px;
+  
+  }
+}
+
+/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
+@media screen and (max-width:768px) {  
+  .mypage-profile-name {    
+    color: red;  
+  }
+}
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width:425px) {  
+  .mypage-profile-name {
+    color: blue;
+  }
+
+  .mypage-index {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  margin-bottom: 40px;
+
+    & .box-image {
+    margin: 6px;
+    box-shadow: 0 0 12px rgba(0,0,0,.9);
+   
+    }
+    & img {
+    width: 80px;
+    height: 80px;
+    }
+    
+
+  }
+  .mypage {
+    & .back-btn {
+    display: none;
+    }
+    & .mypage_icon {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 110px;
+    left: 40px;
+    }
+    & h3 {
+    font-size: 20px;
+    }
+    & .follow-stats {
+    margin-top: 5px;
+    font-size: 10px;
+    }
+    & .fa-lg {
+    position: absolute;
+    top:160px;
+    left: 100px;
+    font-size: 0.9em
+    }
+    & .introduction {
+    font-size: 12px;
+    }
+  }
+
+}
 
 
 
