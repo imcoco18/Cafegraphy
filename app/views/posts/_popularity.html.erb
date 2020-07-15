@@ -4,16 +4,20 @@
 		<div class="post-rank-box">
 			<div class="post-rank-user">
 				<%= link_to user_path(post_rank.user.id), class: "no-underline" do %>
-				<%= attachment_image_tag post_rank.user, :profile_image, size: "40x40" ,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
+				<%= attachment_image_tag post_rank.user, :profile_image ,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
 				<%= post_rank.user.name %>
 				<% end %>
 			</div>
-			<%= link_to post_path(post_rank.id) do %>
-				<%= attachment_image_tag(post_rank, :post_image, size: "160x160") %>
-			<% end %>
+			<div class="post-rank-img">
+				<%= link_to post_path(post_rank.id) do %>
+					<%= attachment_image_tag(post_rank, :post_image) %>
+				<% end %>
+			</div>
 		</div>
 	<% end %>
 </section>
-<%= link_to users_path do %>
-	<h5 class="float-right">＞＞人気のユーザーを見る</h5>
-<% end %>
+<div class="populary-user-btn">
+	<%= link_to users_path do %>
+		<h5 class="float-right">＞＞人気のユーザーを見る</h5>
+	<% end %>
+</div>

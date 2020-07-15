@@ -65,6 +65,10 @@
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(0,0,0,.3);
     }
+    & .post-index-img img {
+    width: 500px;
+    height: 500px;
+    }
     & .post-tags {
     width: 300px;
     }
@@ -169,6 +173,7 @@
     -moz-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s;
     }
+
     & .new-btn:hover {
     background: #ED70B6;
     -webkit-transform: translate(0, 4px);
@@ -186,8 +191,8 @@
     }
     form img.thumb {
         margin: 0 5px 5px 0;
-        max-width: 400px;
-        height: 400px;
+        max-width: 450px;
+        height: 450px;
         vertical-align: bottom;
     }
     & form {
@@ -329,6 +334,18 @@
     }
 
 }
+.post-rank-box {
+  & .post-rank-user img {
+  width: 40px;
+  height: 40px;
+  }
+  & .post-rank-img img {
+  width: 160px;
+  height: 160px;
+  }
+
+}
+
 
 
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
@@ -337,8 +354,80 @@
 }
 /* スマートフォンサイズ（425px）以下の際に適用される設定 */
 @media screen and (max-width:425px) {  
-  .post-new-form {
-  width: 100%;
+  .post-new {
+  width:100%;
+    & .post-new-form {
+      
+    }
+    & .post_img_box {
+      
+    }
+    & .img_field {
+
+        width: 280px;
+        height: 280px;
+        text-align: center;
+        background-image: image-url("logo1.jpg");
+        background-size: contain;
+        display: inline-block;
+    }
+    form img.thumb {
+        margin: 0 5px 5px 0;
+        max-width: 280px;
+        height: 280px;
+        vertical-align: bottom;
+    }
+    & .post_form_box {
+      margin-top: 50px;
+      margin-right: none;
+    }
+    & .new-tags {
+    font-size: 10px;
+    }
+    & .form-group {
+    width: 80%;
+    }
+    & .new-btn {
+    width: 30%;
+    font-size: 16px;
+    
+    }
+  }
+  .post-indexx {
+    width: 100%;
+    font-size: 8px;
+
+    & .post-index-img img {
+      width: 180px;
+      height: 180px;
+      }
+
+    & .post-rank {
+
+      & h3 {
+      font-size: 16px;
+      }
+      
+      & .post-rank-user {
+      font-size: 6px;
+      }
+      & .post-rank-user img {
+      width: 14px;
+      height: 14px;
+      }
+      & .post-rank-img img {
+      width: 80px;
+      height: 80px;
+      }
+      & .post-rank-box {
+      margin: 5px 3px;
+      }
+    }
+    & .populary-user-btn {
+      & h5 {
+      font-size: 12px;
+      }
+    }
   }
 }
 
