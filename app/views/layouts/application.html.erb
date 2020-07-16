@@ -16,7 +16,7 @@
     <% if user_signed_in? %>
       <%= render "layouts/ham" %>
     <% end %>
-    <% unless request.url == root_url %>
+    <% unless request.url == root_url || request.url == about_url %>
       <header>
         <%= render "layouts/header" %>
       </header>
@@ -24,7 +24,7 @@
     <main>
         <%= yield %>
     </main>
-    <% unless request.url == root_url %>
+    <% unless request.url == root_url || request.url == about_url %>
       <footer>
         <%= render "layouts/footer" %>
       </footer>
