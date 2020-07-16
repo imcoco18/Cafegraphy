@@ -6,11 +6,12 @@
 	width: 100%;
 	background-image: image-url("background-cafe.jpg");
 	background-attachment: fixed;
-	background-size:  cover;
+	background-position: center center;
+	background-size: cover;
 
 	& .home-content {
-	padding-top: 140px;
-	height:660px;
+	padding-top: 250px;
+	height: 940px;
 	}
 	& h1 {
 	font-size: 60px;
@@ -25,8 +26,6 @@
 	& .home-title {
 	padding: 5px 10px 1px 10px;
 	margin-bottom: 70px;
-
-
 	}
 
 	& span {
@@ -212,6 +211,31 @@
 	}
 
 
+}
+
+/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
+@media screen and (max-width:768px) {  
+ .home {
+  	
+  	& P {
+  	font-size: 24px;
+  	}
+  	& .home-content {
+		padding-top: 300px;
+		height: 1024px;
+		}
+  }
+}
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width:425px) {  
+  .home {
+  	& h1 {
+  	font-size: 42px;
+  	}
+  	& P {
+  	font-size: 16px;
+  	}
+  }
 }
 
 

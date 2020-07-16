@@ -13,16 +13,22 @@
   </head>
 
   <body>
-    <%= render "layouts/ham" %>
-    <header>
-      <%= render "layouts/header" %>
-    </header>
+    <% if user_signed_in? %>
+      <%= render "layouts/ham" %>
+    <% end %>
+    <% unless request.url == root_url %>
+      <header>
+        <%= render "layouts/header" %>
+      </header>
+    <% end %>
     <main>
         <%= yield %>
     </main>
-    <footer>
-      <%= render "layouts/footer" %>
-    </footer>
+    <% unless request.url == root_url %>
+      <footer>
+        <%= render "layouts/footer" %>
+      </footer>
+      <% end %>
     <%= render "layouts/pagetop" %>
 
   </body>
