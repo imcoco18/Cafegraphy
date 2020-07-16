@@ -187,8 +187,8 @@
     cursor: pointer;
     }
     & .img_field {
-      width: 450px;
-      height: 450px;
+      width: 400px;
+      height: 400px;
       text-align: center;
       background-image: image-url("logo1.jpg");
       background-size: contain;
@@ -196,15 +196,18 @@
     }
     form img.thumb {
         margin: 0 5px 5px 0;
-        max-width: 450px;
-        height: 450px;
+        max-width: 400px;
+        height: 400px;
         vertical-align: bottom;
     }
     & form {
     margin-bottom: 50px;
     }
+    & .form-group {
+    width: 450px;
+    }
     & .post_form_box {
-    margin-top: 100px;
+    margin-top: 30px;
     }
 
 }
@@ -385,9 +388,10 @@
 /* スマートフォンサイズ（425px）以下の際に適用される設定 */
 @media screen and (max-width:425px) {  
   .post-new {
-  width:100%;
+  width:375px;
+  padding-left: 20px;
     & .post-new-form {
-      
+     
     }
     & .post_img_box {
       
@@ -415,12 +419,24 @@
     font-size: 10px;
     }
     & .form-group {
-    width: 80%;
+    width: 90%;
     }
     & .new-btn {
     width: 30%;
-    font-size: 16px;
-    
+    font-size: 14px;
+    }
+    & .tag-label {
+    background-color: #EFEDED;
+    border-radius: 10px;
+    padding: 2px 8px;
+    float: left;
+    margin-right: 1px;
+    }
+    & .actions {
+    margin-bottom: 0;
+    }
+    & .back-btn {
+    font-size: 10px;
     }
   }
   .post-indexx {

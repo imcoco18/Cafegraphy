@@ -9,9 +9,9 @@
 					<%= render 'layouts/error', object: f.object %>
 					<form>
 						
-						<div class="post-new-box">
+						<div class=" container post-new-box">
 							<div class="row">
-								<div class="post_img_box col-md-5">
+								<div class="post_img_box col-xs-1">
 									<div class="img_field">
 										<span>no image</span>
 		        			</div>
@@ -19,7 +19,7 @@
 										<%= f.attachment_field :post_image, class: "image" %>
 									</div>
 								</div>
-								<div class="post_form_box col-md-5 ">
+								<div class="post_form_box col-xs-1">
 									<div class="new-title form-group">
 										<%= f.text_field :title, class: "form-control", placeholder:"タイトル" %>
 									</div>
