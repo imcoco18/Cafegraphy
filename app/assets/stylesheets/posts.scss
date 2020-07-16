@@ -355,7 +355,32 @@
 
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
 @media screen and (max-width:768px) {  
- 
+    .post-rank {
+
+      & h3 {
+      font-size: 20px;
+      }
+      
+      & .post-rank-user {
+      font-size: 12px;
+      }
+      & .post-rank-user img {
+      width: 14px;
+      height: 14px;
+      }
+      & .post-rank-img img {
+      width: 140px;
+      height: 140px;
+      }
+      & .post-rank-box {
+      margin: 5px 8px;
+      }
+    }
+    .populary-user-btn {
+      & h5 {
+      font-size: 18px;
+      }
+    }
 }
 /* スマートフォンサイズ（425px）以下の際に適用される設定 */
 @media screen and (max-width:425px) {  
