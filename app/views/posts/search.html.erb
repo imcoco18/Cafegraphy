@@ -14,7 +14,7 @@
 							<!--キーワード検索-->
 							<div class="search-keyword_shop_name">
 								<!--Ransackでsearch_form_for使用-->
-								<%= search_form_for @result, url: search_posts_path do |f| %>
+								<%= search_form_for @q, url: search_posts_path do |f| %>
 								<!-- Cafe検索 -->
 								<div class="form-group">
 				          <span><i class="fas fa-store"></i></span><%= f.label :title_or_shop_name, "Cafe" %>

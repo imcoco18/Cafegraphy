@@ -50,9 +50,8 @@ class PostsController < ApplicationController
 
   def search
     #キーワード
-    @result = Post.ransack(params[:result_id])
-    @results = @result.result(distinct: true).order("created_at DESC").page(params[:page]).per(5)
-    @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all.order("created_at DESC").page(params[:page]).per(5)
+    @q = Post.ransack(params[:q])
+    @results = @q.result(distinct: true).order("created_at DESC").page(params[:page]).per(5)
   end
 
   def tags_index
@@ -66,6 +65,6 @@ class PostsController < ApplicationController
   end
 
   def search_params
-    params.require(:result_id).permit!
+    params.require(:q).permit!
   end
 end
