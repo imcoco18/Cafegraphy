@@ -36,9 +36,9 @@
 				            <section class="post-index">
 											<% @results.each do |result| %>
 											<div class="post-index-box">
-												<div class="view view-first">
+												<div class="view view-first post-index-img">
 				                	<%= link_to post_path(result.id) do %>
-				                		<%= attachment_image_tag(result, :post_image, size: "480x480") %>
+				                		<%= attachment_image_tag(result, :post_image) %>
 				                	<% end %>
 				              	</div>
 							        	<div class="float-left" id="likes_buttons_<%= result.id %>">
@@ -59,7 +59,7 @@
 							        	</div>
 												<div class="post-user float-right">
 												<%= link_to user_path(result.user.id) do %>
-													<%= attachment_image_tag result.user, :profile_image, size: "40x40" ,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
+													<%= attachment_image_tag result.user, :profile_image,fallback: "Cafegraphy.jpg", class: "rounded-circle" %>
 												<% end %>
 												<%= link_to user_path(result.user.id), class: "no-underline" do %>
 												  <%= result.user.name %>
