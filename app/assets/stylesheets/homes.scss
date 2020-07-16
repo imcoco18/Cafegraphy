@@ -264,6 +264,11 @@
 /* スマートフォンサイズ（425px）以下の際に適用される設定 */
 @media screen and (max-width:425px) {  
   .home {
+  height: 812px;
+    & .home-content {
+		padding-top: 250px;
+		height: 812px;
+		}
   	& h1 {
   	font-size: 42px;
   	}
